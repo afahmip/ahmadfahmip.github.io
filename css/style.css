@@ -1,0 +1,420 @@
+body {
+    font-family: 'Barlow', sans-serif;
+	padding: 0;
+	margin: 0;
+}
+
+/* ----------------------------
+--- Navbar
+----------------------------- */
+
+.navbar {
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    border-radius: 0;
+    border: 0;
+}
+
+.navbar-default {
+    background-color: #181818c7;
+}
+
+.navbar-default .navbar-brand {
+    color: #ecf0f1;
+}
+
+.navbar-default .navbar-brand:hover .navbar-default .navbar-brand:focus {
+    color: #f9f9f9;
+}
+
+.navbar-default .navbar-text {
+    color: #ecf0f1;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #ecf0f1;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #f9f9f9;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #f9f9f9;
+    background-color: #313031;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #f9f9f9;
+    background-color: #313031;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: #313031;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #313031;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #ecf0f1;
+}
+
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+    border-color: #ecf0f1;
+}
+
+.navbar-default .navbar-link {
+    color: #ecf0f1;
+}
+
+.navbar-default .navbar-link:hover {
+    color: #f9f9f9;
+}
+  
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: #ecf0f1;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+      color: #f9f9f9;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+      color: #f9f9f9;
+      background-color: #313031;
+    }
+}
+
+/* ----------------------------
+--- Header
+----------------------------- */
+
+.jumbotron {
+	color: white;
+	text-align: center;
+    padding-top: 10%;
+  	height: 100vh;
+    width: 100%;
+	
+	/* Background */
+    background: url("../img/bg2.jpg");
+	
+	/* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.jumbotron .inside {
+    position: relative;
+    transform: translate(0px, -50%);
+    top: 35%;
+}
+
+#first-title {
+    font-size: 10em;
+    font-family: 'Barlow', sans-serif;
+    font-weight: bold;
+}
+
+#second-title {
+    font-size: 3em;
+    font-family: 'Barlow', sans-serif;
+}
+
+h2 {
+    line-height: 150%;
+}
+
+/* ----------------------------
+--- Section
+----------------------------- */
+
+.section {
+    font-family: 'Barlow', sans-serif;
+    text-align: center;
+}
+
+.sec-intro {
+    padding-top: 8vh;
+    padding-bottom: 4vh;
+}
+
+.sec-title {
+    font-size: 5em;
+    font-style: 'Barlow Thin';
+}
+
+.sec-cont {
+    font-size: 2em;
+    color: dimgray;
+}
+
+.section .row {
+    display: flex;
+}
+
+.section .col-md-4 {
+    flex: 1;
+    padding-bottom: 2vh;
+}
+
+.section #part1 {
+    background-color: #96e3ff;
+}
+
+.section #part2 {
+    background-color: #f3f3f3;
+}
+
+.section #part3 {
+    background-color: #276a91;
+}
+
+.part-title {
+    padding-top: 4vh;
+    font-size: 4vw;
+    font-weight: bold;
+}
+
+.part-cont {
+    font-size: 1.5em;
+    padding: 5% 15% 5% 15%;
+}
+
+.img1 {
+    width: 60%;
+}
+
+.img2 {
+    width: 100%;
+}
+
+/* ----------------------------
+--- Image Grid
+----------------------------- */
+
+#image-grid .row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1vh 15vh 10vh 15vh;
+}
+  
+ /* Create four equal columns that sits next to each other */
+#image-grid .column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 0.5vw 0 0.5vw;
+}
+  
+#image-grid .column img {
+    width: 100%;
+    margin-top: 2vh;
+    vertical-align: middle;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 800px) {
+    #image-grid .column {
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+  
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+    #image-grid .column {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+/* ----------------------------
+--- Contact
+----------------------------- */
+
+#contact {
+    font-family: 'Barlow', sans-serif;
+    text-align: center;
+    background-color: #474747;
+
+    /* Margin */
+    padding-top: 15vh;
+}
+
+#contact h1{
+    font-size: 4em;
+    font-weight: bold;
+    color: #00C9DF;
+}
+
+#contact h2 {
+    font-size: 7em;
+    font-weight: bold;
+    color: white;
+}
+
+#contact h3 {
+    font-size: 4em;
+    font-weight: bold;
+    color: #00E6FF;
+}
+
+.fa-3x {
+    padding: 2vw 2.5vw;
+    font-size: 2vw;
+}
+
+.fa-3x i:hover {
+    transition: .3s ease;
+    color: white;
+}
+
+.fa-3x a {
+    padding-left: 2.5vw;
+    padding-right: 2.5vw;
+    color: #B8B8B8;
+}
+
+/* ----------------------------
+--- Responsive fixes
+----------------------------- */
+
+@media screen and (max-width: 1028px) {
+    #image-grid .row {
+        padding: 1vh 5vh 10vh 5vh;
+    }
+
+    .part-cont {
+        padding: 5% 5% 5% 5%;
+    }
+
+    #contact h2 {
+        font-size: 8vw;
+    }
+
+    #contact h3 {
+        font-size: 5vw;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .jumbotron {
+        background-color: dimgray;
+        text-align: center;
+    }
+
+    #first-title {
+        font-size: 10vw;
+    }
+
+    #second-title {
+        font-size: 5vw;
+    }
+
+    .section {
+        text-align: center;
+        margin-bottom: 10vw;
+    }
+
+    .section .row {
+        display: block;
+    }
+
+
+    .section .col-md-4 {
+        display: block;
+    }
+
+    .section .part-title {
+        font-size: 10vw;
+    }
+
+    .sec-title {
+        font-size: 7vw;
+    }
+
+    #info-section {
+        font-size: 4.2vw;
+    }
+
+    #img1 {
+        width: 100%;
+        margin-bottom: 3vw;
+    }
+
+    #img-info {
+        text-align: center;
+        font-size: 3vw;
+    }
+
+    #contact h2 {
+        font-size: 8vw;
+    }
+
+    #contact h3 {
+        font-size: 5vw;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .jumbotron {
+        background-color: dimgray;
+        text-align: center;
+    }
+
+    #first-title {
+        font-size: 10vw;
+    }
+
+    #second-title {
+        font-size: 5vw;
+    }
+
+    .section {
+        text-align: center;
+        margin-bottom: 10vw;
+    }
+
+    .section .row {
+        display: block;
+    }
+
+    .section .col-md-4 {
+        display: block;
+    }
+
+    .sec-title {
+        font-size: 10vw;
+    }
+
+    #info-section {
+        font-size: 4.2vw;
+    }
+
+    #img1 {
+        width: 100%;
+        margin-bottom: 3vw;
+    }
+
+    #img-info {
+        text-align: center;
+        font-size: 3vw;
+    }
+}
