@@ -1,7 +1,8 @@
 body {
     font-family: 'Barlow', sans-serif;
 	padding: 0;
-	margin: 0;
+    margin: 0;
+    transition-duration: 1s;
 }
 
 /* ----------------------------
@@ -125,6 +126,7 @@ body {
     position: relative;
     transform: translate(0px, -50%);
     top: 35%;
+    padding-bottom: 8vh;
 }
 
 #first-title {
@@ -134,12 +136,36 @@ body {
 }
 
 #second-title {
-    font-size: 3em;
+    font-size: 2.7em;
     font-family: 'Barlow', sans-serif;
 }
 
 h2 {
     line-height: 150%;
+}
+
+.jumbotron #btn-nav {
+    padding-top: 2vh;
+}
+
+.jumbotron .buttons {
+    background-color: rgba(255, 255, 255, 0); /* Green */
+    border: 2px solid white;
+    border-radius: 8px;
+    color: white;
+    padding: 15px 32px;
+    margin: 2vh 2vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.5em;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.jumbotron .buttons:hover {
+    background-color: white;
+    color: dimgray;
 }
 
 /* ----------------------------
@@ -206,6 +232,46 @@ h2 {
     width: 100%;
 }
 
+#portfolio .btn-port-light {
+    background-color: rgba(255, 255, 255, 0); /* Green */
+    border: 2px solid rgb(75, 75, 75);
+    border-radius: 8px;
+    color: rgb(75, 75, 75);
+    padding: 15px 32px;
+    margin: 2vh 2vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.5em;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+#portfolio .btn-port-light:hover {
+    background-color: rgb(75, 75, 75);
+    color: white;
+}
+
+#portfolio .btn-port-dark {
+    background-color: rgba(255, 255, 255, 0); /* Green */
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 8px;
+    color: rgb(255, 255, 255);
+    padding: 15px 32px;
+    margin: 2vh 2vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.5em;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+#portfolio .btn-port-dark:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(56, 56, 56);
+}
+
 /* ----------------------------
 --- Image Grid
 ----------------------------- */
@@ -214,6 +280,7 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     padding: 1vh 15vh 10vh 15vh;
+    transition-duration: 0.4s;
 }
   
  /* Create four equal columns that sits next to each other */
@@ -221,6 +288,7 @@ h2 {
     flex: 25%;
     max-width: 25%;
     padding: 0 0.5vw 0 0.5vw;
+    transition-duration: 0.4s;
 }
   
 #image-grid .column img {
@@ -279,6 +347,7 @@ h2 {
 .fa-3x {
     padding: 2vw 2.5vw;
     font-size: 2vw;
+    transition-duration: 0.4s;
 }
 
 .fa-3x i:hover {
@@ -312,6 +381,10 @@ h2 {
     #contact h3 {
         font-size: 5vw;
     }
+
+    .fa-3x {
+        font-size: 5vw;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -326,6 +399,14 @@ h2 {
 
     #second-title {
         font-size: 5vw;
+    }
+
+    .jumbotron #btn-nav {
+        padding-top: 4vh;
+    }
+
+    .jumbotron .buttons {
+        font-size: 1em;
     }
 
     .section {
