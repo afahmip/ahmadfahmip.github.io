@@ -5,9 +5,8 @@ body {
     transition-duration: 1s;
 }
 
-.section-title {
+h1 {
     font-size: 2em;
-    font-weight: 100;
 }
 
 .row {
@@ -87,11 +86,15 @@ nav li a:hover {
     padding: 5vh 0 0 0;
 }
 
+#intro h1 {
+    font-weight: bold;
+}
+
 #intro .intro-content {
     font-size: 1.2em;
     border-radius: 4px;
-    margin: 5vh 30vw 8vh 30vw;
-    padding: 5vh 5vw;
+    margin: 3vh 30vw 0 30vw;
+    padding: 15px 32px;
     color: white;
     display: inline-block;
 }
@@ -102,23 +105,48 @@ nav li a:hover {
 
 #ui-list {
     text-align: center;
-    align-content: center;
+    padding: 15vh 0 5vh 0;
+}
+
+#ui-list h1 {
+    font-weight: bold;
+}
+
+#ui-list img {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#ui-list .img-ui {
+    width: 65%;
+    height: 100%;
+}
+
+#ui-list .img-ui-left {
+    margin: 0 1vw 0 10vw;
+    max-width: 31.5%;
+    max-height: 100%;
+    display: inline;
+}
+
+#ui-list .img-ui-right {
+    margin: 0 10vw 0 1vw;
+    max-width: 31.5%;
+    max-height: 100%;
+    display: inline;
+}
+
+#ui-list #ui-content {
     padding: 5vh 0 0 0;
 }
 
-#ui-list .ui-content {
-    margin: 5vh 15vw 0 15vw;
-    padding: 5vh 8vw;
-}
-
-.ui-content .ui-detail h1 {
+#ui-list #ui-content h1 {
+    font-size: 3.5em;
     font-weight: bold;
-    font-size: 8em;
+    text-align: left;
 }
 
-.ui-content .ui-detail p {
-    font-size: 1.5em;
-    color: rgb(85, 85, 85);
+#ui-content .container-fluid {
+    padding: 5vh 0 0 0;
 }
 
 /* ----------------------------
@@ -232,44 +260,23 @@ nav li a:hover {
 ----------------------------- */
 
 @media screen and (max-width: 1028px) {
-    #intro {
-        text-align: center;
-        padding: 5vh 0 0 0;
-    }
-    
-    #intro .intro-content {
-        font-size: 1.2em;
-        width: 90%;
-        margin: 5vh 0 8vh 0;
-        padding: 5vh 5vw;
-        color: white;
-        display: inline-block;
-    }
-    
     #ui-list .img-ui {
         width: 80%;
         height: 100%;
     }
     
-    #ui-list .ui-content {
-        margin: 5vh 1vw 0 1vw;
+    #ui-list .img-ui-left {
+        margin: 0 1vw 0 8vw;
+        max-width: 40%;
+        max-height: 100%;
+        display: inline;
     }
-
-    .ui-content .ui-detail {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    .ui-content .ui-detail h1 {
-        font-size: 15vw;
-    }
-
-    .ui-content .ui-detail p {
-        font-size: 4vw;
-    }
-
-    .ui-content .ui-detail .img-responsive {
-        width: 100%;
+    
+    #ui-list .img-ui-right {
+        margin: 0 8vw 0 1vw;
+        max-width: 40%;
+        max-height: 100%;
+        display: inline;
     }
 
     #thank h1 {
