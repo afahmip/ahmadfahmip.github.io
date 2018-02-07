@@ -3,11 +3,13 @@ body {
 	padding: 0;
     margin: 0;
     transition-duration: 1s;
+    background-color: white;
 }
 
 .section-title {
-    font-size: 2em;
-    font-weight: 100;
+    font-size: 1.5em;
+    font-weight: bold;
+    letter-spacing: 0.3em;
 }
 
 .row {
@@ -51,7 +53,7 @@ nav li a:hover {
 }
 
 #hero #title {
-    padding: 30vh 2vw 25vh 25vw;
+    padding: 20vh 2vw 25vh 20vw;
     text-align: right;
 }
 
@@ -88,7 +90,7 @@ nav li a:hover {
 }
 
 #intro .intro-content {
-    font-size: 1.2em;
+    font-size: 1.5em;
     border-radius: 4px;
     margin: 5vh 30vw 8vh 30vw;
     padding: 5vh 5vw;
@@ -101,6 +103,9 @@ nav li a:hover {
 ----------------------------- */
 
 #ui-list {
+    background-color: white;
+    border-top-left-radius: 3vw;
+    border-top-right-radius: 3vw;
     text-align: center;
     align-content: center;
     padding: 5vh 0 0 0;
@@ -128,17 +133,12 @@ nav li a:hover {
 #typos {
     text-align: center;
     color: white;  
-    background-color: rgb(0, 86, 97);
+    background-color: rgb(0, 88, 139);
     padding: 10vh 0 10vh 0;
 }
 
 #typos p {
     font-size: 1.5em;
-}
-
-#typos h1 {
-    font-weight: bold;
-    color: rgb(108, 238, 255);
 }
 
 .segoe-ui {
@@ -153,19 +153,15 @@ nav li a:hover {
     text-align: right;
 }
 
-#colorpart .column {
-    flex: 50%;
-    width: 50%;
-}
-
-#typos .colorgrid {
-    max-width: 50%;
-    text-align: center;
-}
-
-#typos .colorgrid .square {
+#colorpart .colorgrid {
     width: 8em;
-    height: 5em;
+    height: 8em;
+    margin-right: 2vw;
+}
+
+#colorpart .row {
+    padding: 4vh 1vw 0 0;
+    display: flex;
 }
 
 /* ----------------------------
@@ -173,6 +169,7 @@ nav li a:hover {
 ----------------------------- */
 
 #thank {
+    background-color: white;
     text-align: center;
     padding: 15vh 0 15vh 0;
 }
@@ -232,6 +229,39 @@ nav li a:hover {
 ----------------------------- */
 
 @media screen and (max-width: 1028px) {
+    #navbar {
+        padding-right: 3vw;
+    }
+
+    #hero #title {
+        padding: 20vh 5vw 5vh 5vw;
+        text-align: center;
+    }
+
+    #hero #title h1{
+        font-size: 5em;
+    }
+    
+    #hero #title .main-logo {
+        width: 60%;
+        height: 100%;
+        padding-bottom: 2vh;
+    }
+    
+    #hero #title p {
+        font-size: 1em;
+    }
+    
+    #hero #image {
+        padding: 0 5vw 5vh 5vw;
+        text-align: center;
+    }
+    
+    #hero .img-main {
+        width: 100%;
+        height: 100%;
+    }
+
     #intro {
         text-align: center;
         padding: 5vh 0 0 0;
