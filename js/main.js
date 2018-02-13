@@ -1,4 +1,6 @@
 $(document).ready(function(){
+
+    /* SCROLLING WINDOW */
     // Add smooth scrolling to all links
     $("a").on('click', function(event) {
     
@@ -21,4 +23,24 @@ $(document).ready(function(){
         });
         } // End if
     });
+
+    /* SCROLLREVEAL */
+    // ScrollRevealJs
+    window.sr = ScrollReveal();
+
+    // Header
+    sr.reveal('.jumbotron .inside h1', { duration: 1000 });
+    sr.reveal('.jumbotron .inside h2', { duration: 1000 }, 200);
+    sr.reveal('.jumbotron #btn-nav a', { duration: 1000 }, 200);
+
+    // Portfolio
+    sr.reveal('.sec-intro', { duration: 1000 });
+    sr.reveal('#port img', { duration: 1000 });
+
+    // Graphic design
+    sr.reveal('#image-grid .sec-intro', { duration: 1000 });
+    sr.reveal('#image-grid img', { duration: 1000 }, 200);
+
+    // Contact
+    sr.reveal('#contact-icons a', { duration: 1000}, 200);
 });
