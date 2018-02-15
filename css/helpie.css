@@ -18,7 +18,7 @@
 
 .ui-content .ui-detail h1 {
     font-weight: bold;
-    font-size: 8em;
+    font-size: 6em;
 }
 
 .ui-content .ui-detail p {
@@ -67,7 +67,7 @@
     }
 
     .ui-content .ui-detail h1 {
-        font-size: 15vw;
+        font-size: 10vw;
     }
 
     .ui-content .ui-detail p {
