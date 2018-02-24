@@ -38,6 +38,31 @@
     display: inline;
 }
 
+ /* Create two equal columns that sits next to each other */
+#ui-content .row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1vh 25vh 10vh 25vh;
+    transition-duration: 0.4s;
+}
+
+#ui-content .column {
+    flex: 50%;
+    max-width: 50%;
+    padding: 0 0.5vw 0 0.5vw;
+    transition-duration: 0.4s;
+}
+  
+#ui-content .column img {
+    width: 100%;
+    margin-top: 2vh;
+    vertical-align: middle;
+}
+
+#ui-content .image {
+    transition-duration: 0.4s;
+}
+
 #ui-list #ui-content {
     padding: 5vh 0 0 0;
 }
@@ -50,6 +75,26 @@
 
 #ui-content .container-fluid {
     padding: 5vh 0 0 0;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 800px) {
+    #ui-content .column {
+        flex: 50%;
+        max-width: 50%;
+    }
+
+    #ui-content .row {
+        padding: 1vh 5vh 10vh 5vh;
+    }
+}
+  
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+    #ui-content .column {
+        flex: 100%;
+        max-width: 100%;
+    }
 }
 
 /* ----------------------------
