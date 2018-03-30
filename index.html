@@ -16,6 +16,13 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
+	<!-- Scripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" async></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" async></script>
+	<script type="text/javascript" src="js/main.js" async></script>
+	<script type="text/javascript" src="js/typewrite.js" async></script>
+	<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js" async></script>
+
 </head>
 
 <body>
@@ -37,10 +44,10 @@
 	<div class="jumbotron" href="#portfolio">
 		<div class="inside">
 			<h1 id="first-title">Hi! I'm Fahmi.</h1>
-			<h2 class="second-title">Front End Developer. UI/UX Designer.</h2>
-			<h2 class="second-title">Graphic Designer. Illustrator.</h2>
-			<h2 class="second-title">Creative, out-of-the-box,</h2>
-			<h2 class="second-title">weird yet funny.</h2>
+			<div style="display: inline-flex; text-align: center">
+				<h2 id="second-title-first">I do &nbsp;</h2>
+				<h2 id="second-title"></h2>
+			</div>
 		</div>
 		<div class="container" id="btn-nav">
 			<a href="#portfolio">
@@ -114,22 +121,28 @@
 		</div>
 		<div class="row">
 			<div class="column">
-				<img src="img/gd1.png" alt="">
-				<img src="img/gd6.png" alt="">
+				<img class="image" src="img/gd1.png" alt="">
+				<img class="image" src="img/gd6.png" alt="">
 			</div>
 			<div class="column">
-				<img src="img/gd5.png" alt="">
-				<img src="img/gd4.png" alt="">
+				<img class="image" src="img/gd5.png" alt="">
+				<img class="image" src="img/gd4.png" alt="">
 			</div>
 			<div class="column">
-				<img src="img/gd3.png" alt="">
-				<img src="img/gd2.png" alt="">
+				<img class="image" src="img/gd3.png" alt="">
+				<img class="image" src="img/gd2.png" alt="">
 			</div>
 			<div class="column">
-				<img src="img/gd8.png" alt="">
-				<img src="img/gd7.png" alt="">
+				<img class="image" src="img/gd8.png" alt="">
+				<img class="image" src="img/gd7.png" alt="">
 			</div>
 		</div>
+	</div>
+
+	<!-- Create image modal -->
+	<div id="myModal" class="modal">
+		<span class="close">&times;</span>
+		<img class="modal-content" id="img01">
 	</div>
 
 	<!-- Contact Me -->
@@ -160,12 +173,6 @@
 			</a>
 		</div>
 	</div>
-
-	<!-- Scripts -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script type="text/javascript" src="js/main.js"></script>
-	<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 
 </body>
 
