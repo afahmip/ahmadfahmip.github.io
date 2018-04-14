@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Slide Linux</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Kitab Linux</h1>
+					<p>Created by</p>
+					<h4>Sammy, Joseph, Fahmi, Gery<br>Tanor, Ody, Hagai, Eka</h4>
+					<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/2000px-Tux.svg.png" alt="">
+				</section>
+				<!-- Sejarah Linux -->
+				<section>
+					<section data-background="#fcfcfc">
+						<h1>Sejarah Linux</h1>
+						<p style="color: #008299">Sebuah kisah yang mengubah umat manusia</p>
+					</section>
+					<section>
+						<img src="https://img.memecdn.com/linus-torvalds-the-good-linux-creator_o_3334599.jpg" alt="">
+					</section>
+					<section data-background="#bfbfbf">
+						<p>Pada awal mula, setelah Bell Labs cabut dari development mutex, 
+							Ken Thompson menciptakan UNIX dan Dennis Richie menciptakan bahasa C. 
+							Bell Labs adalah anak perusahan dari, tapi karena hukum monopoli sehingga 
+							perusahaan tersebut dipecah dan banyak asetnya dipindahkan kemana mana.</p>
+					</section>
+					<section data-background="#848484">
+						<p>Beberapa vendor yang memiliki lisensi UNIX membuat implementasinya sendiri, 
+							beserta beberapa universitas dengan mahasiswanya masing - masing. AT&T melarang 
+							penggunaan UNIX untuk menjadi bahan pembelajaran di Universitas yang tidak memiliki 
+							lisensi UNIX. System yang merupakan standar dari UNIX di dunia, turunannya seperti IBM EIX, Sans Solaris, HP-UX.</p>
+					</section>
+					<section data-background="#4f4f4f">
+						<p>Sementara itu, University of California, Berkeley, mahasiswanya membuat banyak modifikasi
+							 pada UNIX yaitu BSD hingga versi 4. Pada tahun 90-an, muncul pertanyaan siapa yang memiiki 
+							 hak cipta terhadap UNIX, dan Berkeley tidak mampu mendistribusikan BSD karena memiliki 
+							 sebagian code UNIX. Lalu Berkeley mendistribusikan BSD yang pure tanpa code UNIX.</p>
+					</section>
+				</section>
+				<!-- Design Principles -->
+				<section>Slide 3</section>
+				<section>
+					<section data-background="#dddddd">
+						<h2>Slide Backgrounds</h2>
+						<p>
+							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
+						</p>
+						<a href="#" class="navigate-down">
+							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a>
+					</section>
+					<section data-background="#eeeee">
+						<h2>Slide Backgrounds</h2>
+						<p>
+							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
+						</p>
+						<a href="#" class="navigate-down">
+							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a>
+					</section>
+				</section>
+				<section>
+					<h2>Export to PDF</h2>
+					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
+					<iframe data-src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				transition: 'convex',
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
