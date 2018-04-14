@@ -1,179 +1,109 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<head>
-	<!-- Title -->
-	<title>Ahmad Fahmi</title>
+		<title>Slide Linux</title>
 
-	<!-- Meta -->
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
 
-	<!-- Links -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Barlow:400,600">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
 
-	<!-- Scripts -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" async></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" async></script>
-	<script type="text/javascript" src="js/typewrite.js" async></script>
-	<script type="text/javascript" src="js/main.js" async></script>
-	<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js" async></script>
-
-</head>
-
-<body>
-	<!-- Navbar -->
-	<!--
-		<nav class="navbar navbar-default">
-			<div class="container-fluid">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">Home</a></li>
-					<li><a href="#portfolio">Portfolio</a></li>
-					<li><a href="#">Resume</a></li>
-					<li><a href="#contact">Contact</a></li>
-		  		</ul>
-			</div>
-		</nav>
-		-->
-
-	<!-- Header -->
-	<div class="jumbotron" href="#portfolio">
-		<div class="inside">
-			<h1 id="first-title">Hi! I'm Fahmi.</h1>
-			<div style="display: inline-flex; text-align: center">
-				<h2 id="second-title-first">I do &nbsp;</h2>
-				<h2 id="second-title"></h2>
-			</div>
-		</div>
-		<div class="container" id="btn-nav">
-			<a href="#portfolio">
-				<button class="buttons">See My Portfolio</button>
-			</a>
-			<a href="https://drive.google.com/open?id=1oYeZryI4j0-MXry4Fv9-RP7Cz6Cn9oLQ" target="_blank">
-				<button class="buttons">See My Resume</button>
-			</a>
-			<a href="#contact">
-				<button class="buttons">Contact Me!</button>
-			</a>
-		</div>
-	</div>
-
-	<!-- I Do UI/UX -->
-	<div class="container-fluid section" id="portfolio">
-		<div class="sec-intro">
-			<h1 class="sec-title" style="color: #00A0B2">I Do
-				<b>UI/UX Design,</b>
-			</h1>
-			<br>
-			<p class="sec-cont">Most of my UI/UX projects are done for competitions.</p>
-		</div>
-		<div class="row" id="port">
-			<div class="col-md-4" id="part1">
-				<h1 class="part-title" style="color: #00384d">Helpie!</h1>
-				<a href="helpie.html">
-					<button class="btn-port-light">See Project</button>
-				</a>
-				<p class="part-cont">
-					Helpie! is an app where people who are very busy can hire helpers to do their daily household chores. This idea won the
-					<b>1st place of Inkubator IT Idea Competition 2018</b>, an idea competition held by HMIF ITB.
-				</p>
-				<img class="img1" src="img\ui1.png" alt="helpie">
-			</div>
-			<div class="col-md-4" id="part2">
-				<h1 class="part-title" style="color: #00384d">Dewaweb</h1>
-				<a href="dewaweb.html">
-					<button class="btn-port-light">See Project</button>
-				</a>
-				<p class="part-cont">
-					This is my redesigned version of Dewaweb's UI. Was done for
-					<b>BSLC (BINUS Student Learning Community) Web Design Competition 2017</b>.
-				</p>
-				<img class="img2" src="img\ui2.png" alt="dewaweb">
-			</div>
-			<div class="col-md-4" id="part3">
-				<h1 class="part-title" style="color: white">Akuguru</h1>
-				<a href="akuguru.html">
-					<button class="btn-port-dark">See Project</button>
-				</a>
-				<p class="part-cont" style="color: white">
-					Akuguru is a project where we gather young people who want to teach with the place in need, e.g. slum areas. This idea was
-					managed to
-					<b>Top 100 Telkom Socio Digi Leaders 2017</b>, a competition held by Telkom Indonesia.
-				</p>
-				<img class="img1" src="img\ui3.png" alt="akuguru">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Kitab Linux</h1>
+					<p>Created by</p>
+					<h4>Sammy, Joseph, Fahmi, Gery<br>Tanor, Ody, Hagai, Eka</h4>
+					<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/2000px-Tux.svg.png" alt="">
+				</section>
+				<!-- Sejarah Linux -->
+				<section>
+					<section data-background="#fcfcfc">
+						<h1>Sejarah Linux</h1>
+						<p style="color: #008299">Sebuah kisah yang mengubah umat manusia</p>
+					</section>
+					<section>
+						<img src="https://img.memecdn.com/linus-torvalds-the-good-linux-creator_o_3334599.jpg" alt="">
+					</section>
+					<section data-background="#bfbfbf">
+						<p>Pada awal mula, setelah Bell Labs cabut dari development mutex, 
+							Ken Thompson menciptakan UNIX dan Dennis Richie menciptakan bahasa C. 
+							Bell Labs adalah anak perusahan dari, tapi karena hukum monopoli sehingga 
+							perusahaan tersebut dipecah dan banyak asetnya dipindahkan kemana mana.</p>
+					</section>
+					<section data-background="#848484">
+						<p>Beberapa vendor yang memiliki lisensi UNIX membuat implementasinya sendiri, 
+							beserta beberapa universitas dengan mahasiswanya masing - masing. AT&T melarang 
+							penggunaan UNIX untuk menjadi bahan pembelajaran di Universitas yang tidak memiliki 
+							lisensi UNIX. System yang merupakan standar dari UNIX di dunia, turunannya seperti IBM EIX, Sans Solaris, HP-UX.</p>
+					</section>
+					<section data-background="#4f4f4f">
+						<p>Sementara itu, University of California, Berkeley, mahasiswanya membuat banyak modifikasi
+							 pada UNIX yaitu BSD hingga versi 4. Pada tahun 90-an, muncul pertanyaan siapa yang memiiki 
+							 hak cipta terhadap UNIX, dan Berkeley tidak mampu mendistribusikan BSD karena memiliki 
+							 sebagian code UNIX. Lalu Berkeley mendistribusikan BSD yang pure tanpa code UNIX.</p>
+					</section>
+				</section>
+				<!-- Design Principles -->
+				<section>Slide 3</section>
+				<section>
+					<section data-background="#dddddd">
+						<h2>Slide Backgrounds</h2>
+						<p>
+							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
+						</p>
+						<a href="#" class="navigate-down">
+							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a>
+					</section>
+					<section data-background="#eeeee">
+						<h2>Slide Backgrounds</h2>
+						<p>
+							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
+						</p>
+						<a href="#" class="navigate-down">
+							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a>
+					</section>
+				</section>
+				<section>
+					<h2>Export to PDF</h2>
+					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
+					<iframe data-src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+				</section>
 			</div>
 		</div>
-	</div>
 
-	<!-- I Create Illustration -->
-	<div class="container-fluid section" id="image-grid">
-		<div class="sec-intro">
-			<h1 class="sec-title" style="color: rgb(253, 143, 0)">..as well as
-				<b>Illustration</b> and
-				<b>Graphic Design.</b>
-			</h1>
-			<br>
-			<p class="sec-cont">Three words: Unique, Detailed, Awesome.</p>
-		</div>
-		<div class="row">
-			<div class="column">
-				<img class="image" src="img/gd1.png" alt="">
-				<img class="image" src="img/gd6.png" alt="">
-			</div>
-			<div class="column">
-				<img class="image" src="img/gd5.png" alt="">
-				<img class="image" src="img/gd4.png" alt="">
-			</div>
-			<div class="column">
-				<img class="image" src="img/gd3.png" alt="">
-				<img class="image" src="img/gd2.png" alt="">
-			</div>
-			<div class="column">
-				<img class="image" src="img/gd8.png" alt="">
-				<img class="image" src="img/gd7.png" alt="">
-			</div>
-		</div>
-	</div>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
 
-	<!-- Create image modal -->
-	<div id="myModal" class="modal">
-		<span class="close">&times;</span>
-		<img class="modal-content" id="img01">
-	</div>
-
-	<!-- Contact Me -->
-	<div class="container-fluid" id="contact">
-		<div class="container-fluid">
-			<h1>Contact Me!</h1>
-			<br style="line-height: 10vh;">
-			<h2>afahmi3@yahoo.co.id</h2>
-			<h3>
-				<i class="fas fa-phone"></i> +6281299052191</h3>
-			<br style="line-height: 10vh;">
-		</div>
-		<div class="fa-3x" id="contact-icons">
-			<a href="https://www.github.com/ahmadfahmip" target="_blank">
-				<i class="fab fa-github"></i>
-			</a>
-			<a href="https://www.facebook.com/ahmad.fahmi.pratama" target="_blank">
-				<i class="fab fa-facebook"></i>
-			</a>
-			<a href="https://www.linkedin.com/in/ahmadfahmipratama" target="_blank">
-				<i class="fab fa-linkedin"></i>
-			</a>
-			<a href="https://www.instagram.com/afahmip" target="_blank">
-				<i class="fab fa-instagram"></i>
-			</a>
-			<a href="https://www.behance.net/afahmip" target="_blank">
-				<i class="fab fa-behance"></i>
-			</a>
-		</div>
-	</div>
-
-</body>
-
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				transition: 'convex',
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
 </html>
