@@ -104,12 +104,12 @@
 					</section>
 					<section>
 						<img src="https://img.memecdn.com/linus-torvalds-the-good-linux-creator_o_3334599.jpg" alt="">
+						<p style="font-size: 0.6em">Mari mengucap syukur kepada Tuhan karena telah menciptakan <b>Linus Torvalds</b>.</p>
 					</section>
 					<section style="font-size: 0.7em" data-background="#bfbfbf">
 						<p>Pada awal mula, setelah Bell Labs cabut dari development mutex, 
 							Ken Thompson menciptakan UNIX dan Dennis Richie menciptakan bahasa C. 
-							Bell Labs adalah anak perusahan dari, tapi karena hukum monopoli sehingga 
-							perusahaan tersebut dipecah dan banyak asetnya dipindahkan kemana mana.</p>
+							Bell Labs adalah anak perusahan dari Alcatel-Lucent, tapi karena hukum monopoli dan sebagainya sehingga perusahaan tersebut dipecah dan banyak asetnya dipindahkan kemana mana.</p>
 					</section>
 					<section style="font-size: 0.7em" data-background="#848484">
 						<p>Beberapa vendor yang memiliki lisensi UNIX membuat implementasinya sendiri, 
@@ -118,17 +118,11 @@
 							lisensi UNIX. System yang merupakan standar dari UNIX di dunia, turunannya seperti IBM EIX, Sans Solaris, HP-UX.</p>
 					</section>
 					<section style="font-size: 0.7em" data-background="#4f4f4f">
-						<p>Sementara itu, University of California, Berkeley, mahasiswanya membuat banyak modifikasi
-							 pada UNIX yaitu BSD hingga versi 4. Pada tahun 90-an, muncul pertanyaan siapa yang memiiki 
-							 hak cipta terhadap UNIX, dan Berkeley tidak mampu mendistribusikan BSD karena memiliki 
+						<p>Sementara itu, University of California, Berkeley, mahasiswanya membuat banyak modifikasi pada UNIX yaitu BSD hingga versi 4. Pada tahun 90-an, muncul pertanyaan siapa yang memiiki hak cipta terhadap UNIX, dan Berkeley tidak mampu mendistribusikan BSD karena memiliki 
 							 sebagian code UNIX. Lalu Berkeley mendistribusikan BSD yang pure tanpa code UNIX.</p>
 					</section>
 					<section style="font-size: 0.7em">
-						<p>Tahun 90an Prof Andrew Tanenbaum menulis MINIX yang ymeniru UNIX namun designnya beda. 
-							Komunitas BSD ingin mengubah BSD menjadi sistem UNIX yang lengkap. Saat itu, GNU dan MINIX 
-							merupakan dua kontingen besar dalam sistem operasi. Lalu muncullah Linus Torvalds dari Helsinki, 
-							yang mencoba - coba membuat OSnya sendiri karena MINIX dianggap tidak bebas atas adanya banyak 
-							batasan. Tahun 1991, Torvalds membuat sebuah pengumuman bahwa dia membuat sebuah operating system 
+						<p>Tahun 90an Prof Andrew Tanenbaum menulis MINIX yang ymeniru UNIX namun designnya beda. Komunitas BSD ingin mengubah BSD menjadi sistem UNIX yang lengkap. Saat itu, GNU dan MINIX merupakan dua kontingen besar dalam sistem operasi. Lalu muncullah <b style="color: orange">Linus Torvalds dari Helsinki</b>, yang mencoba - coba membuat OSnya sendiri karena MINIX dianggap tidak bebas atas adanya banyak batasan. Tahun 1991, Torvalds membuat sebuah pengumuman bahwa dia membuat sebuah operating system 
 							kecil yang disebut LINUX. Richard Stallman membuat GNU menjadi sebuah program yang bebas dari 
 							copyrght orang lain. Saat LINUX muncul, GNU masih kesulitan membuat kernel mereka. Sehingga mereka 
 							membuat LINUX menjadi dasar kernel dan userspacenya GNU. Lalu mereka mengambil beberapa software 
@@ -447,9 +441,18 @@
 						<p class="fragment" style="font-size: 0.7em; color: red">Masalahnya adalah saat seluruh tugas ini mencoba mengakses internal data structure yang sama. Hal ini kasusnya mirip dengan masalah critical section, 
 							hanya saja disini tugas kernel harus tetap berjalan dengan tetap menjaga integritas data.</p>
 					</section>
+					<section>
+						<img src="img/linux/sc2.jpg" alt="">
+					</section>
+					<section>
+						<img src="img/linux/sc3.jpg" alt="">
+					</section>
 					<section style="text-align: left">
 						<h3>Symmetric Multiprocessing</h3>
-						<p style="font-size: 0.7em">Mulai ada di Linux 2.0 Kernel, yaitu memperbolehkan sebuah proses dieksekusi secara parallel dalam prosesor-prosesor yang berbeda. Pada saat itu hanya satu prosesor yang boleh mengeksekusi satu kernel-code.</p>
+						<p style="font-size: 0.7em">Mulai ada di <b style="color: rgb(46, 194, 194)">Linux 2.0 Kernel</b>, yaitu memperbolehkan sebuah proses dieksekusi secara parallel dalam prosesor-prosesor yang berbeda. Pada saat itu hanya satu prosesor yang boleh mengeksekusi satu kernel-code.</p>
+						<p class="fragment" style="font-size: 0.7em">Dalam <b style="color: rgb(46, 194, 194)">versi 2.2 single kernel spinlock (disebut juga BKL - Big Kernel Lock)</b> ditambahkan agar multiple proses dapat dijalankan secara konkuren dalam satu kernel. Namun hal ini cukup kasar karena menghentikan seluruh proses dalam kernel sekaligus.</p>
+						<p class="fragment" style="font-size: 0.7em">Selanjutnya Linux mengubah sistem ini menjadi <b style="color: rgb(46, 194, 194)">multiple locks</b> yang tiap locknya didesain menjaga sebagian kecil subset dari kernel’s data structure.</p>
+						<p class="fragment" style="font-size: 0.7em">Dalam kernel 3.0 bahkan telah ditambahkan <b style="color: rgb(46, 194, 194)">ever-finer locking, processor afiinity dan load-balancing algorithm.</b></p>
 					</section>
 				</section>
 
@@ -577,27 +580,21 @@
 						<p>Setiap <i>block</i> merepresentasikan unit dimana kernel melakukan proses I/O. 
 							Ketika sebuah block dibaca ke memori, maka akan disimpan ke dalam <b>buffer</b>. 
 							Untuk membaca dan menulis konten buffer dari / ke driver block device, 
-							digunakanlah <b>Request manager</b></p>
+							digunakanlah <b>Request manager</b>.</p>
 					</section>
 					<section style="text-align: left">
 						<h4>Character Devices</h4>
-						<p style="font-size: 0.7em">terdiri dari device seperti mouse dan keyboard. Perbedaan 
-							mendasar antara block dan character device adalah, block devices diakses secara random, 
-							sementara character device diakses secara serial (berurutan). Cara kerja character device 
-							adalah membaca serangkaian karakter secara berurut, misalnya serangkaian karakter yang 
-							ditekan di keyboard.</p>
+						<p style="font-size: 0.7em">secara garis besar, <i>character device driver</i> terdiri dari hampir semua <i>device driver</i> yang tidak menawarkan <i>random access</i> ke block-block data.</p>
+						<p class="fragment" style="font-size: 0.7em">Kernel hampir tidak melakukan <i>preprocessing</i> pada <i>read</i> maupun <i>write request</i> pada <i>character device</i>. Jadi, langsung di-<i>passing</i> gitu aja, biar <i>device</i>-nya yang menangani <i>request</i> tersebut.</p>
+						<p class="fragment" style="font-size: 0.7em">Tapi ada pengecualian bagi <i>character device</i> tertentu yang terhubung sama <i>terminal device</i>. Disini kernel punya standar <i>interface</i> yang diatur oleh <b style="color:rgb(46, 194, 194)">tty_struct</b>. Tiap struktur menangani aliran data dari <i>terminal</i> dan memasukkannya ke <b style="color: orange">line discipline.</b></p>
+						<p class="fragment" style="font-size: 0.85em; color: orange">Apa itu line discipline?</p>
 					</section>
 					<section style="text-align: left">
-						<p style="font-size: 0.7em"><b>Line Discipline</b> adalah sebuah interpreter bagi informasi 
-							dari terminal device. Cara kerjanya adalah dengan "menempelkan" aliran data dari terminal 
-							pada standard input dan output pada suatu proses, menyebabkan proses tersebut bisa 
-							berkomunikasi langsung dengan terminal user. Contohnya adalah <i>tty discipline</i>.</p>
+						<p style="font-size: 0.7em"><b>Line Discipline</b> adalah sebuah interpreter bagi informasi dari terminal device. Cara kerjanya adalah dengan "menempelkan" aliran data dari terminal pada standard input dan output pada suatu proses, menyebabkan proses tersebut bisa berkomunikasi langsung dengan terminal user. Contohnya adalah <b style="color: orange">tty discipline</b>.</p>
 					</section>
 					<section style="text-align: left">
 						<h4>Network Devices</h4>
-						<p style="font-size: 0.7em">paling berbeda diantara yang lain. User tidak bisa secara langsung 
-							mentransfer data ke network device. Tetapi user harus berkomunikasi secara tidak langsung 
-							dengan cara membuka koneksi ke subsistem network pada kernel.</p>
+						<p style="font-size: 0.7em">paling berbeda diantara yang lain. User tidak bisa secara langsung mentransfer data ke network device. Tetapi user harus berkomunikasi secara tidak langsung dengan cara membuka koneksi ke subsistem network pada kernel. Selanjutnya ini akan dibahas lebih lanjut di subbab <b>Network Structures</b>.</p>
 					</section>
 				</section>
 
