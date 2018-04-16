@@ -20,15 +20,80 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+
+		<style>
+			#open-menu {
+				color: #00a5c2;
+				margin-left: 3vw;
+				margin-top: 3vh;
+				font-family: 'Segoe UI';
+				position: absolute;
+				font-size: 0.5em;
+				cursor:pointer;
+				z-index: 100;
+			}
+
+			.overlay-menu {
+				font-family: 'Segoe UI';
+				height: 100%;
+				width: 0;
+				position: fixed;
+				z-index: 1000;
+				top: 0;
+				left: 0;
+				background-color: rgb(0,0,0);
+				background-color: rgba(0,0,0, 0.9);
+				overflow-x: hidden;
+				transition: 0.5s;
+			}
+
+			.overlay-menu-content {
+				position: relative;
+				top: 15%;
+				width: 100%;
+				text-align: center;
+				margin-top: 30px;
+			}
+
+			.overlay-menu a {
+				padding: 8px;
+				text-decoration: none;
+				font-size: 2em;
+				color: #818181;
+				display: block;
+				transition: 0.3s;
+			}
+
+			.overlay-menu a:hover, .overlay-menu a:focus {
+				color: #f1f1f1;
+			}
+
+			.overlay-menu .closebtn {
+				position: absolute;
+				top: 20px;
+				right: 45px;
+				font-size: 60px;
+			}
+
+			@media screen and (max-height: 450px) {
+				.overlay-menu a {font-size: 20px}
+				.overlay-menu .closebtn {
+					font-size: 40px;
+					top: 15px;
+					right: 35px;
+				}
+			}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
+			<span id="open-menu" onclick="openNav()">&#9776; Navigate</span>
+			<!-- <button id="open-menu" onclick="openNav()">Navigate</button> -->
 			<div class="slides">
-				<section>
-					<h1>Kitab Linux</h1>
-					<p>Created by</p>
-					<h4>Sammy, Joseph, Fahmi, Gery<br>Tanor, Ody, Hagai, Eka</h4>
-					<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/2000px-Tux.svg.png" alt="">
+				<section style="text-align: left" data-background="#f7f7f7">
+					<h1 style="color: #ffbf00">Kitab Linux</h1>
+					<h4 style="font-size: 0.75em; color: #5b5b5b">Oleh: Sammy, Joseph, Fahmi, Gery, Tanor, Ody, Hagai, Eka</h4>
+					<!-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/2000px-Tux.svg.png" alt=""> -->
 				</section>
 				<!-- Sejarah Linux -->
 				<section>
@@ -59,7 +124,7 @@
 					</section>
 				</section>
 				<!-- Design Principles -->
-				<section>
+				<section data-background="#f7f7f7">
 					<section>
 						<h1>Design Principles</h1>
 					</section>
@@ -146,7 +211,7 @@
 						<h4>Why modules?</h4>
 						<ul>
 							<li>Dapat mengimplementasikan device driver, file system, networking protocol pada Linux.</li>
-							<li>Dapat mengcompile dan memodifikasi kerne code dengan lebih mudah (Dynamic Linking).</li>
+							<li>Dapat mengcompile dan memodifikasi kernel code dengan lebih mudah (Dynamic Linking).</li>
 							<li>Dapat didistribusikan ke user lain (It’s FREE!!).</li>
 							<li>Dengan Kernel Modules, Linux System bisa di set up dengan standar minimal.</li>
 						</ul>							
@@ -159,6 +224,44 @@
 							<li>Driver-Registration System</li>
 							<li>Conflict Resolution Mechanism</li>
 						</ul>
+					</section>
+					<section>
+						<h4>Module Management</h4>
+						<div style="display: flex; text-align: left; font-size: 0.5em">
+							<div style="width: 50%; margin: 10px" class="fragment">
+								<p>Seperti file bertipe o. Kodenya sudah ada tapi belum tahu addressnya.</p>
+								<p>Misalnya:</p>
+								<ul>
+									<li>*UND* yang harus disambungkan dengan yang ada di dalam kernel</li>
+									<li>.text sebagai offset fungsi yang disediakan oleh module</li>
+								</ul>
+							</div>
+							<div style="width: 50%; margin: 10px" class="fragment">
+								<p>Proses:</p>
+								<ul>
+									<li>Module loader didalam kernel melihat symbol yang masih *UND* lalu 
+										dicoba diciptakan dengan symbol table kernel dan semua symbol *UND* harus ketemu. </li>
+									<li>Jika tidak, maka akan error.</li>
+									<li>Jika ada, akan dialokasi memory di dalam kernel untuk menyimpan modulnya.</li>
+									<li>Realokasi *UND* akan diisi dengan address symbol yang sudah ada di kernel. 
+										Realokasi address dalam module akan disesuikan dengan address memory yang dialokasikan.</li>
+									<li>Semua symbol yang diekspor oleh module akan ditambahkan ke dalam symbol table kernel agar 
+										module lain  dapat memakainya</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+					<section>
+						<h4>Modprobe</h4>
+						<p style="font-size: 0.8em">Karena itu, pada utility modprobe akan dicari semua dependencies dari sebuah module agar di load terlebih dahulu 
+							sehingga semua requirements terpenuhi sebelum module ini di-load.</p>
+					</section>
+					<section>
+						<h4>Driver Registration</h4>
+						<p style="font-size: 0.8em">Kernel me-maintain tabel dinamik dari semua driver yang diketahui dan menyediakan beberapa langkah/perintah 
+							untuk memperbolehkan menambah driver tambahan atau menghapusnya secara bebas dari tabel.</p>
+						<p style="font-size: 0.8em">Kernel juga memastikan akan selalu memanggil module’s startup routine ketika module tersebut di-load ke 
+							kernel serta memanggil module’s cleanup routine saat di-unload.</p>
 					</section>
 				</section>
 				<!-- Process Management -->
@@ -229,19 +332,107 @@
 						<p style="font-size: 0.7em">Jika semua flag dipass maka sama seperti model pemanggilan thread di Sistem lain dan jika semua tidak di pass akan sama seperti fork karena tidak ada penurunan shared resource.</p>
 					</section>
 				</section>
+
 				<!-- Scheduling -->
 				<section>
 					<section>
 						<h1>Scheduling</h1>
 					</section>
+					<section>
+						<p>Seperti di semua UNIX, Linux memakai preemptive multitasking (menentukan sebuah proses ditahan untuk dikerjakan selama berapa lama berdasarkan parameter tertentu). 
+							Dalam sistem seperti ini scheduler memutuskan proses apa di run kapan. Bukan hanya sekedar user proses, tetapi juga tugas kernel-kernel.</p>
+					</section>
+					<section style="text-align: left">
+						<h3>Process Scheduling</h3>
+						<p style="font-size: 0.8em">Ada dua algoritma scheduling yang dipakai di Linux. <b>Time-sharing algorithm</b> yakni preemptive scheduling pada tiap proses agar adil. 
+							Satu lagi yaitu untuk real-time task yang mendahulukan prioritas daripada adil. Sehingga Linux Scheduler memberi setiap proses dua variabel yaitu time slice 
+							yakni waktu untuk proses ditahan di prosesor dan nice value bernilai (-20) - 19. Nilai nice value semakin kecil berarti lebih prioritas.</p>
+					</section>
+					<section>
+						<p style="font-size: 0.7em">Dalam aplikasinya, bentuk scheduler ini memakai <b>Red-Black Tree</b></p>
+						<img src="img/linux/sc1.jpg" alt="">
+					</section>
+					<section style="text-align: left">
+						<h3>Real-Time Scheduling</h3>
+						<p style="font-size: 0.8em">Untuk beberapa proses tingkat bawah Linux juga mengaplikasikan algoritma FCFS dan Round Robin untuk real-time schedulingnya. 
+							Jadi operasi dasar dengan prioritas yang sama akan didahulukan yang memiliki waiting time lebih besar.Scheduling ini dipakau untuk mengatur proses dari tugas kernel-kernel.</p>
+					</section>
+					<section style="text-align: left">
+						<h3>Kernel Synchronization</h3>
+						<p style="font-size: 0.7em">Request untuk Eksekusi di tingkat kernel dapat terjadi dalam dua cara yaitu eksplisit (menggunakan syscall) dan implicit (contoh saat page fault). 
+							Serta dapat pula menambahkan interrupt baru yang membuat CPU mengeksekusi kernel-defined handler untuk interrupt itu (Tubes OS).</p>
+						<p class="fragment" style="font-size: 0.7em; color: red">Masalahnya adalah saat seluruh tugas ini mencoba mengakses internal data structure yang sama. Hal ini kasusnya mirip dengan masalah critical section, 
+							hanya saja disini tugas kernel harus tetap berjalan dengan tetap menjaga integritas data.</p>
+					</section>
+					<section style="text-align: left">
+						<h3>Symmetric Multiprocessing</h3>
+						<p style="font-size: 0.7em"></p>
+					</section>
 				</section>
+
 				<!-- Memory Management -->
+				<section>
+					<section>
+						<h1>Memory Management</h1>
+					</section>
+				</section>
+
 				<!-- File Systems -->
+				<section>
+					<section>
+						<h1>File Systems</h1>
+					</section>
+				</section>
 				<!-- I/O -->
+				<section>
+					<section>
+						<h1>I/O Devices</h1>
+					</section>
+					<section style="text-align: left">
+						<h4>Block Devices</h4>
+						<p style="font-size: 0.7em">atau yang sering disebut sebagai random access device 
+							adalah alat yang menyimpan data dan menawarkan akses ke seluruh bagian secara acak. 
+							Contoh block device adalah hard disk dan floppy disk. Dengan menggunakan hard disk, 
+							kita dapat mengakses data yang tersimpan secara acak.</p>
+					</section>
+					<section style="text-align: left">
+						<h4>Character Devices</h4>
+						<p style="font-size: 0.7em">terdiri dari device seperti mouse dan keyboard. Perbedaan 
+							mendasar antara block dan character device adalah, block devices diakses secara random, 
+							sementara character device diakses secara serial (berurutan). Cara kerja character device 
+							adalah membaca serangkaian karakter secara berurut, misalnya serangkaian karakter yang 
+							ditekan di keyboard ataupun serangkaian data byte yang dikirim melalui serial line.</p>
+					</section>
+					<section style="text-align: left">
+						<h4>Network Devices</h4>
+						<p style="font-size: 0.7em">paling berbeda diantara yang lain. User tidak bisa secara langsung 
+							mentransfer data ke network device. Tetapi user harus berkomunikasi secara tidak langsung 
+							dengan cara membuka koneksi ke subsistem network pada kernel.</p>
+					</section>
+				</section>
 				<!-- IPC -->
+				<section>
+					<section>
+						<h1>Interprocess Communication</h1>
+					</section>
+					<section>
+						<p>Linux menyediakan lingkungan untuk proses saling berkomunikasi seperti memberitahu proses lain bahwa suatu event muncul, 
+							berjalan atau telah berhenti, atau mentransfer data dari satu proses ke proses lainnya.</p>
+					</section>
+					<section style="text-align: left">
+						<h3>Synchronization and Signals</h3>
+						<p style="font-size: 0.8em">Dalam komunikasi antar proses, Linux memberikan sebuah mekanisme standar menggunakan signal. Fungsi signal yaitu 
+							menginformasikan bahwa suatu event telah terjadi kepada suatu proses. Suatu proses (termasuk kernel) 
+							dapat mengirimkan signal kepada proses lain, dengan syarat sinyal yang dikirim dimiliki pengguna yang berbeda. </p>
+					</section>
+				</section>
 				<!-- Network Structure -->
+				<section>
+					<section>
+						<h1>Network Structure</h1>
+					</section>
+				</section>
 				<!-- Security -->
-				<section>Slide 3</section>
 				<section>
 					<section>
 						<h1>Security</h1>
@@ -260,7 +451,7 @@
 						</span>
 					</section>
 					<section>
-						<q style="text-align: left">Biasanya diimplementasi dengan menggunakan <i>password</i> + <b>salt value</b> yang dimasukkan ke <i>one-way function</i>. 
+						<q style="text-align: left; font-size: 0.8em">Biasanya diimplementasi dengan menggunakan <i>password</i> + <b>salt value</b> yang dimasukkan ke <i>one-way function</i>. 
 							Salt value adalah sebuah random string yang di <i>concat</i> dengan passwordnya. Misal password: <b>love123 salt</b> = <b>14ksL!</b> 
 							Maka akan menjadi <b>love12314ksL!</b> Kombinasi tersebut dimasukkan ke <i>one-way function</i>, 
 							yang berarti hasil dari fungsi hashing tersebut tidak dapat di decode kembali.
@@ -280,33 +471,49 @@
 							<p class="fragment">GroupID (gid)</p>
 						</div>
 					</section>
-				</section>
-				
-				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
+					<section>
+						<div style="display: flex; text-align: center">
+							<img style="width: 35%; height: 100%; margin: 20px" src="img/linux/sec1.jpg" alt="">
+							<img style="width: 50%; height: 100%; margin: 20px" src="img/linux/sec2.jpg" alt="">
+						</div>
 					</section>
-					<section data-background="#eeeee">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
+					<section>
+						<h4 style="color: aqua">1 UID, banyak GID</h4>
+						<p>Semua objek pada Linux memiliki sebuah UID dan GID</p>
+						<p style="font-size: 0.65em">Apabila UID pengakses cocok dengan UID objek, maka pengakses punya user rights.</p>
+						<p style="font-size: 0.65em">Apabila GID pengakses cocok dengan GID objek, maka pengakses punya group rights.</p>
+					</section>
+					<section>
+						<h3 style="color: red">MELTDOWN SPECTRE</h3>
+						<img src="img/linux/sec3.jpg" class="fragment" alt="">
+					</section>
+					<section>
+						<h3 style="color: rgb(0, 214, 71)">Address Space Layout Randomization (ASLR) </h3>
+						<div style="font-size: 0.7em">
+							<p class="fragment" >Dulu hacker biasanya melakukan serangan dengan mengetahui atau menebak lokasi address space 
+								sehingga bisa melakukan penyalahgunaan dari sana.</p>
+							<p class="fragment">Address space layout randomization mencegah itu semua dengan melakukan pengacakan address space 
+								sehingga hacker sulit untuk mengetahui address space untuk melakukan serangan</p>								
+						</div>
 					</section>
 				</section>
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe data-src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
+			</div>
+		</div>
+		<!-- <span id="open-menu" onclick="openNav()">&#9776; open</span> -->
+		<div id="myNav" class="overlay-menu">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			<div class="overlay-menu-content">
+				<a href="#/1">History of Linux</a>
+				<a href="#/2">Design Principles</a>
+				<a href="#/3">Kernel Modules</a>
+				<a href="#/4">Process Management</a>
+				<a href="#/5">Scheduling</a>
+				<a href="#/6">Memory Management</a>
+				<a href="#/7">File Systems</a>
+				<a href="#/8">I/O Devices</a>
+				<a href="#/9">IPC</a>
+				<a href="#/10">Network Structures</a>
+				<a href="#/11">Security</a>
 			</div>
 		</div>
 
@@ -318,7 +525,11 @@
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
-				transition: 'convex',
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				transition: 'slide',
 				dependencies: [
 				{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
@@ -326,6 +537,14 @@
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
+
+			function openNav() {
+    			document.getElementById("myNav").style.width = "100%";
+			}
+
+			function closeNav() {
+				document.getElementById("myNav").style.width = "0%";
+			}
 		</script>
 	</body>
 </html>
