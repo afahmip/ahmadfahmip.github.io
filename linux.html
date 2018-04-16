@@ -59,7 +59,229 @@
 					</section>
 				</section>
 				<!-- Design Principles -->
+				<section>
+					<section>
+						<h1>Design Principles</h1>
+					</section>
+					<section style="font-size: 0.7em; text-align: left">
+						<h4>Kernel</h4>
+						<p>kernel melakukan berbagai abstraksi dari sebuah sistem operasi, seperti : Signal, System calls, Process dan Sheduler, 
+							Virtual Memory, File systems, Network protocols, Character Device Drivers, Block Device Drivers, Network Device Drivers, Trap dan Faults, Physical Memory, Interrupts.</p>
+					</section>
+					<section style="font-size: 0.7em; text-align: left">
+						<h4>System Libraries</h4>
+						<p>merupakan kumpulan fungsi-fungsi standar yang dipakai oleh aplikasi untuk dapat berinteraksi dengan kernel. Fungsi - fungsi ini mengimplemen fungsionalitas
+							 yang tidak membutuhkan privilage penuh dari kernel code. Library yang paling penting : C library (libc). System libraries memberikan berbagai fungsionalitas,
+							  baik dari syscall yang paling basic hingga kompleks, seperti menjalankan syscall untuk mentransfer kontrol dari user mode ke kernel mode, file handling,
+							   algoritma sorting, fungsi matematis, manipulasi string.</p>
+					</section>
+					<section style="font-size: 0.7em; text-align: left">
+						<h4>System Utilities</h4>
+						<p>program yang menjalankan tugas khusus secara tersendiri. Beberapa utilitas dijalankan sekali saja dan kemudian melakukan konfigurasi beberapa aspek pada sistem. 
+							Yg lainnya, yaitu daemons dijalankan secara permanen : contoh, <b>menerima koneksi (http daemon, ftp, ssh, telnet, bisa juga service, dkk) serta menerima logon requests, 
+							mengupdate log file</b>, dan masih banyak lagi. Salah satu system utilities yang paling penting yaitu Shell, sebagai standard command line interface untuk UNIX. 
+							Kebanyakan linux pakai BASH (Bourne Again Shell). Ada jg shell yang lain sepert ZSH, yaitu Z shell. Shell dipakai untuk menerima inputan dari user dan kemudian menjalankan perintah yang diminta. </p>
+					</section>
+					<section style="font-size: 0.8em">
+						<h3>Kernel vs User</h3>
+						<p>Kode pada kernel dapat mengeksekusi semua intruksi pada prosesor secara penuh. Kernel dapat mengakses physical resource ( hardware, driver, dkk) pada komputer.  
+							Pada Linux, disebut sebagai kernel mode. Di sini, tidak ada user code yang dimasukan dan dibangun.</p>
+						<p>Setiap kode yang tidak dibutuhkan untuk jalan di kernel mode diletakkan pada system libraries dan hanya berjalan di dalam user mode. 
+							User mode hanya dapat mengakses ke beberapa bagian pada system resources yang sudah dicontrol.</p>
+					</section>
+					<section>
+						<div style="display: flex;">
+							<h3>Model Linux&nbsp;&nbsp;</h3>
+							<h3 style="color: aqua" class="fragment">Monolithic + Modular</h3>
+						</div>
+						<div style="font-size: 0.6em; text-align: left" class="fragment">
+							<p>Model linux menggunakan model monolitik dimana pada model ini setiap kode kernel dan struktur datanya diletakkan pada satu alamat memori yang sama 
+							(core scheduling, virtual memory, device drivers, file systems, dan networking code). Dengan demikian, model ini meningkatkan dan design yang dibuat simpel dan mudah dimengerti. 
+							Performance lebih bagus karena tidak memerlukan context switch (environment eksekusi) yaitu perpindahan antara proses (tidak perlu memerlukan page table, dlsb.) 
+							ketika suatu proses tersebut memanggil fungsi kernel atau ketika interrupt hardware dilakukan. </p>
+							<p>Walaupun semua komponen kernel diletakkan pada satu file kernel, masih ada ruang dalam modularity . Aplikasi user dapat me-load shared libraries modules secara dinamik pada saat run time. 
+								Module ini benar-benar independen terhadap kernel dan disebut loadable module dan mempunyai dua karakteristik penting :</p>
+							<p class="fragment"><b>Dynamic Linking</b> -> bisa diload dan di keluarkan dari memory kapan saja</p>
+							<p class="fragment"><b>Stackable Module</b> -> sistem hirearkis, user paling atas</p>
+						</div>
+					</section>
+					<section>
+						<p style="font-size: 0.75em">Salah satu perintah untuk menambahkan kernel module yaitu dengan perintah insmod -> insmod can insert a single module from any location, 
+							and does not consider dependencies when doing so. It's a much lower-level program. </p>
+						<p class="fragment" style="font-size: 0.75em">Syntax : insmod [file name] [module-options...]</p>
+						<div class="fragment" data-markdown>
+							<script type="text/template">
+								```
+
+								insmod /path/to/snd-usb-audio.ko snd-cmipci snd_id="first" snd_mpu_port=0x330
+
+								```
+							</script>
+						</div>
+						<p class="fragment" style="font-size: 0.75em">Buat mengecek module yang ada dilakukan dengan perintah lsmod</p>
+					</section>
+					<section>
+							Setiap module didefined oleh 2 tabel : module table dan symbol table. 
+							The module table includes the following elements:
+							• *next: Pointer to the following module. All modules are organized into a linked list. The
+							list begins with a pseudomodule (not shown in Figure 2.17).
+							• *name: Pointer to module name.
+							• size: Module size in memory pages.
+							• usecount: Module usage counter. The counter is incremented when an operation involving
+							the module's functions is started and decremented when the operation terminates.
+							• flags: Module flags.
+							• nsyms: Number of exported symbols.
+							• ndeps: Number of referenced modules
+							• *syms: Pointer to this module's symbol table.
+							• *deps: Pointer to list of modules the are referenced by this module.
+							• *refs: Pointer to list of modules that use this module							
+					</section>
+				</section>
+				<!-- Kernel Modules -->
+				<section>
+					<section>
+						<h1>Kernel Modules</h1>
+					</section>
+					<section style="font-size: 0.8em; text-align: left">
+						<h4>Why modules?</h4>
+						<ul>
+							<li>Dapat mengimplementasikan device driver, file system, networking protocol pada Linux.</li>
+							<li>Dapat mengcompile dan memodifikasi kerne code dengan lebih mudah (Dynamic Linking).</li>
+							<li>Dapat didistribusikan ke user lain (It’s FREE!!).</li>
+							<li>Dengan Kernel Modules, Linux System bisa di set up dengan standar minimal.</li>
+						</ul>							
+					</section>
+					<section style="font-size: 0.8em; text-align: left">
+						<h4>4 Komponen Linux module:</h4>
+						<ul>
+							<li>Module Management System</li>
+							<li>Module Loader and Unloader</li>
+							<li>Driver-Registration System</li>
+							<li>Conflict Resolution Mechanism</li>
+						</ul>
+					</section>
+				</section>
+				<!-- Process Management -->
+				<section>
+					<section>
+						<h1>Process Management</h1>
+					</section>
+					<section>
+						<q>adalah servis dasar dari setiap OS kepada user. Karena Linux merupakan turunan UNIX sistem, maka akan ada 
+							beberapa proses yang mirip dengan yang ada di UNIX dan ada yang berbeda. Kali ini akan dibahas kita 
+							akan mereview bagaimana yang di UNIX dan mengenalkan beberapa tambahan manajemen dari Linux.</q>
+						<br><br>
+						<p style="font-size: 0.8em; text-align: right"><i>- Raja, Hagai -</i></p>
+					</section>
+					<section style="text-align: left">
+						<h3>Model Proses</h3>
+						<p><b>Fork</b> -> create new Process</p>
+						<p><b>Exec</b> -> run a program</p>
+						<p style="font-size: 0.8em">Benar2 terpisah, kita bisa create process tanpa menjalankan sebuah program dan sebaliknya. 
+							Kapan saja ketika kita butuh environment beda buat proses baru dalam program dan jika environmentnya 
+							sama dalam satu proses tinggal panggil saja programnya.</p>		
+						<p style="color: #008299" class="fragment">Untuk tetap menjaga setiap eksekusi terkontrol di Linux ada 3 properti yang dimiliki oleh tiap proses.</p>
+					</section>
+					<section>
+						<h4 style="text-align: right">Process Identity</h4>
+						<div style="text-align: left; font-size: 0.6em">
+							<p class="fragment"><b>PID</b> -> identifier unik setiap proses, selanjutnya ini menjadi informasi yang berkaitan dengan setiap proses 
+							yang bergrup melalui fork satu program (tree processed fork) dan login session.</p>
+							<p class="fragment"><b>Credential</b> -> setiap proses akan memiliki atribut user ID dan group ID untuk menentukan apa yang boleh dilakukan untuk proses itu.</p>
+							<p class="fragment"><b>Personality</b> -> biasanya tidak ada di UNIX, tapi di Linux yang boleh mengubah semantik dari suatu syscall hal ini 
+								digunakan untuk menyatakan syscall yang ada pada proses akan kompatibel dengan suatu variasi UNIX.</p>
+							<p class="fragment"><b>Namespace</b> -> view file system yang dipegang proses itu. Untuk user ID dan group ID dapat diubah saat 
+								proses berjalan asal memenuhi security check. Tapi PID tidak bisa, harus sampai proses mati.</p>
+						</div>
+					</section>
+					<section>
+						<h4 style="text-align: right">Process Environment</h4>
+						<p class="fragment" style="text-align: left">Menyimpan dua informasi,</p>
+						<div style="text-align: left; font-size: 0.7em">
+							<p class="fragment"><b>Argument vector</b> -> command line yang sedang dieksekusi</p>
+							<p class="fragment"><b>Environment vector</b> -> list name=value yang menyatakan variabel2 yang terkait dengan proses.
+								Hal ini tidak berubah dan tidak memiliki alternatif untuk setiap proses. Jadi untuk setiap program baru yang akan dijalankan, 
+								proses akan mempass argument variabel ke kernel dan kernel akan mengubah environment yang ada pada program yang baru itu.</p>
+						</div>
+					</section>
+					<section>
+						<h4 style="text-align: right">Process Context</h4>
+						<p class="fragment" style="text-align: left; font-size: 0.6em">(1) dan (2) mungkin statis dan tidak berubah sepanjang proses berjalan. 
+							Kalau yang ini berubah terus sepanjang satu waktu. Isinya adalah:</p>
+						<div style="text-align: left; font-size: 0.55em">
+							<p class="fragment"><b>Scheduling Context</b> -> menyimpan stack proses yang akan dieksekusi</p>
+							<p class="fragment"><b>Accounting</b> -> menghitung jumlah resource yang sedang dipakai dan total 
+								resource yang dipakai sebuah proses sepanjang hidupnya.</p>
+							<p class="fragment"><b>File Table</b> -> menyimpan data open file. Saat I/O syscall, proses akan memanggil file 
+								yang digunakan dengan passing integer sesuai dengan table saat itu</p>
+							<p class="fragment"><b>File-system Context</b> ->dibuat untuk menyimpan data file sistem yang dapat dibuka termasuk root directory, 
+								directory saat ini dan namespace.</p>
+							<p class="fragment"><b>Signal-Handler table</b> -> menyimpan data signal dan apa yang harus dilakukan terhadap sinyal itu kepada proses. 
+								Sinyal itu bisa datang kapan saja untuk misalnya mematikan suatu proses.</p>
+							<p class="fragment"><b>Virtual memory context</b> -> menjelaskan seluruh konten proses. Akan dibahas di 18.6</p>
+						</div>
+					</section>
+					<section style="text-align: left">
+						<h3>Process and Threads</h3>
+						<p style="font-size: 0.7em">Fork untuk duplikasi proses tanpa load satu program baru. Boleh juga membuat thread baru melalui clone. Linux tidak membedakan antara thread dan proses. 
+							Hanya saja kedua fungsi ini bedanya untuk clone ada flags yang mempass resource apa yang di share antara parent dan child.</p>
+						<img src="img/linux/pm1.jpg" alt="">
+						<p style="font-size: 0.7em">Jika semua flag dipass maka sama seperti model pemanggilan thread di Sistem lain dan jika semua tidak di pass akan sama seperti fork karena tidak ada penurunan shared resource.</p>
+					</section>
+				</section>
+				<!-- Scheduling -->
+				<section>
+					<section>
+						<h1>Scheduling</h1>
+					</section>
+				</section>
+				<!-- Memory Management -->
+				<!-- File Systems -->
+				<!-- I/O -->
+				<!-- IPC -->
+				<!-- Network Structure -->
+				<!-- Security -->
 				<section>Slide 3</section>
+				<section>
+					<section>
+						<h1>Security</h1>
+					</section>
+					<section style="text-align: left">
+						<h3>Dibagi menjadi 2</h3>
+						<br>
+						<span class="fragment">
+							<b>Authentication</b> -> memastikan bahwa hanya orang-orang yang mempunyai
+							hak yang bisa mengakses sistem
+						</span>
+						<br><br>
+						<span class="fragment">
+								<b>Access Control</b> -> Mekanisme yang mengatur apakah suatu 
+								user punya hak untuk mengakses suatu file
+						</span>
+					</section>
+					<section>
+						<q style="text-align: left">Biasanya diimplementasi dengan menggunakan <i>password</i> + <b>salt value</b> yang dimasukkan ke <i>one-way function</i>. 
+							Salt value adalah sebuah random string yang di <i>concat</i> dengan passwordnya. Misal password: <b>love123 salt</b> = <b>14ksL!</b> 
+							Maka akan menjadi <b>love12314ksL!</b> Kombinasi tersebut dimasukkan ke <i>one-way function</i>, 
+							yang berarti hasil dari fungsi hashing tersebut tidak dapat di decode kembali.
+						</q>
+						<br><br>
+						<h3 style="text-align: right">Authentication</h3>
+						<p style="font-size: 0.7em; text-align: right"><i>Adylan, 1990</i></p>
+					</section>
+					<section>
+						<p><b>PAM</b> (Pluggable Authentication Module)</p>
+						<p>Sebuah shared library untuk sistem-sistem yang membutuhkan autentikasi user. (more on this later)</p>
+					</section>
+					<section>
+						<h3>Access Control</h3>
+						<div style="display: flex; font-size: 2.5em; color: aqua">
+							<p class="fragment">UserID (uid)</p>
+							<p class="fragment">GroupID (gid)</p>
+						</div>
+					</section>
+				</section>
+				
 				<section>
 					<section data-background="#dddddd">
 						<h2>Slide Backgrounds</h2>
@@ -98,8 +320,8 @@
 			Reveal.initialize({
 				transition: 'convex',
 				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/notes/notes.js', async: true },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
