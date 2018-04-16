@@ -24,7 +24,7 @@
 		<style>
 			#open-menu {
 				color: #00a5c2;
-				margin-left: 3vw;
+				margin-left: 3vh;
 				margin-top: 3vh;
 				font-family: 'Segoe UI';
 				position: absolute;
@@ -95,6 +95,7 @@
 					<h4 style="font-size: 0.75em; color: #5b5b5b">Oleh: Sammy, Joseph, Fahmi, Gery, Tanor, Ody, Hagai, Eka</h4>
 					<!-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/2000px-Tux.svg.png" alt=""> -->
 				</section>
+
 				<!-- Sejarah Linux -->
 				<section>
 					<section data-background="#fcfcfc">
@@ -104,25 +105,38 @@
 					<section>
 						<img src="https://img.memecdn.com/linus-torvalds-the-good-linux-creator_o_3334599.jpg" alt="">
 					</section>
-					<section data-background="#bfbfbf">
+					<section style="font-size: 0.7em" data-background="#bfbfbf">
 						<p>Pada awal mula, setelah Bell Labs cabut dari development mutex, 
 							Ken Thompson menciptakan UNIX dan Dennis Richie menciptakan bahasa C. 
 							Bell Labs adalah anak perusahan dari, tapi karena hukum monopoli sehingga 
 							perusahaan tersebut dipecah dan banyak asetnya dipindahkan kemana mana.</p>
 					</section>
-					<section data-background="#848484">
+					<section style="font-size: 0.7em" data-background="#848484">
 						<p>Beberapa vendor yang memiliki lisensi UNIX membuat implementasinya sendiri, 
 							beserta beberapa universitas dengan mahasiswanya masing - masing. AT&T melarang 
 							penggunaan UNIX untuk menjadi bahan pembelajaran di Universitas yang tidak memiliki 
 							lisensi UNIX. System yang merupakan standar dari UNIX di dunia, turunannya seperti IBM EIX, Sans Solaris, HP-UX.</p>
 					</section>
-					<section data-background="#4f4f4f">
+					<section style="font-size: 0.7em" data-background="#4f4f4f">
 						<p>Sementara itu, University of California, Berkeley, mahasiswanya membuat banyak modifikasi
 							 pada UNIX yaitu BSD hingga versi 4. Pada tahun 90-an, muncul pertanyaan siapa yang memiiki 
 							 hak cipta terhadap UNIX, dan Berkeley tidak mampu mendistribusikan BSD karena memiliki 
 							 sebagian code UNIX. Lalu Berkeley mendistribusikan BSD yang pure tanpa code UNIX.</p>
 					</section>
+					<section style="font-size: 0.7em">
+						<p>Tahun 90an Prof Andrew Tanenbaum menulis MINIX yang ymeniru UNIX namun designnya beda. 
+							Komunitas BSD ingin mengubah BSD menjadi sistem UNIX yang lengkap. Saat itu, GNU dan MINIX 
+							merupakan dua kontingen besar dalam sistem operasi. Lalu muncullah Linus Torvalds dari Helsinki, 
+							yang mencoba - coba membuat OSnya sendiri karena MINIX dianggap tidak bebas atas adanya banyak 
+							batasan. Tahun 1991, Torvalds membuat sebuah pengumuman bahwa dia membuat sebuah operating system 
+							kecil yang disebut LINUX. Richard Stallman membuat GNU menjadi sebuah program yang bebas dari 
+							copyrght orang lain. Saat LINUX muncul, GNU masih kesulitan membuat kernel mereka. Sehingga mereka 
+							membuat LINUX menjadi dasar kernel dan userspacenya GNU. Lalu mereka mengambil beberapa software 
+							yang berguna lalu meng - compile semuanya agar bisa bekerja sebagai suatu sistem. Dalam Android, 
+							LINUX digunakan sebagai kernel dengan library yang didevelop oleh Google.</p>
+					</section>
 				</section>
+
 				<!-- Design Principles -->
 				<section data-background="#f7f7f7">
 					<section>
@@ -132,6 +146,9 @@
 						<h4>Kernel</h4>
 						<p>kernel melakukan berbagai abstraksi dari sebuah sistem operasi, seperti : Signal, System calls, Process dan Sheduler, 
 							Virtual Memory, File systems, Network protocols, Character Device Drivers, Block Device Drivers, Network Device Drivers, Trap dan Faults, Physical Memory, Interrupts.</p>
+					</section>
+					<section>
+						<img src="img/linux/dp1.jpg" alt="">
 					</section>
 					<section style="font-size: 0.7em; text-align: left">
 						<h4>System Libraries</h4>
@@ -147,7 +164,7 @@
 							mengupdate log file</b>, dan masih banyak lagi. Salah satu system utilities yang paling penting yaitu Shell, sebagai standard command line interface untuk UNIX. 
 							Kebanyakan linux pakai BASH (Bourne Again Shell). Ada jg shell yang lain sepert ZSH, yaitu Z shell. Shell dipakai untuk menerima inputan dari user dan kemudian menjalankan perintah yang diminta. </p>
 					</section>
-					<section style="font-size: 0.8em">
+					<section style="font-size: 0.7em">
 						<h3>Kernel vs User</h3>
 						<p>Kode pada kernel dapat mengeksekusi semua intruksi pada prosesor secara penuh. Kernel dapat mengakses physical resource ( hardware, driver, dkk) pada komputer.  
 							Pada Linux, disebut sebagai kernel mode. Di sini, tidak ada user code yang dimasukan dan dibangun.</p>
@@ -157,22 +174,36 @@
 					<section>
 						<div style="display: flex;">
 							<h3>Model Linux&nbsp;&nbsp;</h3>
-							<h3 style="color: aqua" class="fragment">Monolithic + Modular</h3>
+							<h3 style="color: rgb(46, 194, 194)" class="fragment">Monolithic + Modular</h3>
 						</div>
-						<div style="font-size: 0.6em; text-align: left" class="fragment">
-							<p>Model linux menggunakan model monolitik dimana pada model ini setiap kode kernel dan struktur datanya diletakkan pada satu alamat memori yang sama 
-							(core scheduling, virtual memory, device drivers, file systems, dan networking code). Dengan demikian, model ini meningkatkan dan design yang dibuat simpel dan mudah dimengerti. 
-							Performance lebih bagus karena tidak memerlukan context switch (environment eksekusi) yaitu perpindahan antara proses (tidak perlu memerlukan page table, dlsb.) 
-							ketika suatu proses tersebut memanggil fungsi kernel atau ketika interrupt hardware dilakukan. </p>
-							<p>Walaupun semua komponen kernel diletakkan pada satu file kernel, masih ada ruang dalam modularity . Aplikasi user dapat me-load shared libraries modules secara dinamik pada saat run time. 
-								Module ini benar-benar independen terhadap kernel dan disebut loadable module dan mempunyai dua karakteristik penting :</p>
-							<p class="fragment"><b>Dynamic Linking</b> -> bisa diload dan di keluarkan dari memory kapan saja</p>
-							<p class="fragment"><b>Stackable Module</b> -> sistem hirearkis, user paling atas</p>
+						<div style="font-size: 0.55em; text-align: left">
+							<div class="fragment">
+								<p><b>Model linux menggunakan model monolitik:</b></p>
+								<ul>
+									<li>Kode kernel dan struktur data seperti core scheduling, virtual memory, device drivers, file systems, dan networking code diletakan pada satu address memory yang sama.</li>
+									<li>Meningkatkan efisiensi dan performance (tidak perlu context switch).</li>
+									<li>Design yang lebih simpel.</li>
+								</ul>
+							</div>
+							<br>
+							<div class="fragment">
+								<p><b>Kernel Linux juga masih menyediakan ruang untuk modularitas:</b></p>
+								<ul>
+									<li>User dapat me-load shared libraries modules secara dinamik pada saat run time.</li>
+									<li>Module ini benar-benar independen terhadap kernel dan disebut loadable module.</li>
+									<li>
+										2 Karakteristik penting:
+										<ul>
+											<li>Dynamic Linking -> bisa diload dan di keluarkan dari memory kapan saja</li>
+											<li>Stackable Module -> sistem hierarkis, user paling atas</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
 						</div>
 					</section>
 					<section>
-						<p style="font-size: 0.75em">Salah satu perintah untuk menambahkan kernel module yaitu dengan perintah insmod -> insmod can insert a single module from any location, 
-							and does not consider dependencies when doing so. It's a much lower-level program. </p>
+						<p style="font-size: 0.75em">Salah satu perintah untuk menambahkan kernel module yaitu dengan perintah insmod ataupun modprobe. Keduanya punya fungsi yang sama, namun modprobe dapat mengecek dependencies dari module yang dimasukkan.</p>
 						<p class="fragment" style="font-size: 0.75em">Syntax : insmod [file name] [module-options...]</p>
 						<div class="fragment" data-markdown>
 							<script type="text/template">
@@ -183,25 +214,47 @@
 								```
 							</script>
 						</div>
-						<p class="fragment" style="font-size: 0.75em">Buat mengecek module yang ada dilakukan dengan perintah lsmod</p>
 					</section>
 					<section>
-							Setiap module didefined oleh 2 tabel : module table dan symbol table. 
-							The module table includes the following elements:
-							• *next: Pointer to the following module. All modules are organized into a linked list. The
-							list begins with a pseudomodule (not shown in Figure 2.17).
-							• *name: Pointer to module name.
-							• size: Module size in memory pages.
-							• usecount: Module usage counter. The counter is incremented when an operation involving
-							the module's functions is started and decremented when the operation terminates.
-							• flags: Module flags.
-							• nsyms: Number of exported symbols.
-							• ndeps: Number of referenced modules
-							• *syms: Pointer to this module's symbol table.
-							• *deps: Pointer to list of modules the are referenced by this module.
-							• *refs: Pointer to list of modules that use this module							
+						<p>Command lain yang berhubungan yaitu:</p>
+						<ul>
+							<li><b>Lsmod</b> -> melihat list dari modules yang ada</li>
+							<li><b>Rmmod</b> -> menghapus modules</li>
+							<li><b>Depmod</b> -> menggenerate modules.dep dlsb</li>
+						</ul>					
+					</section>
+					<section>
+						<div style="display: flex; justify-content: center; font-size: 0.7em">
+							<h5>Setiap module di-defined oleh&nbsp;&nbsp;</h5>
+							<h5 style="color: rgb(46, 194, 194)" class="fragment">Module dan Symbol Table</h5>
+						</div>
+						<p class="fragment" style="font-size: 0.6em">Elemen pada <i>Module Table</i></p>
+						<div style="text-align: left; display: flex; font-size: 0.55em">
+							<div class="fragment">
+								<ul>
+									<li>*next: Pointer ke module berikutnya. Setiap module diatur ke dalam Linked List dengan list awal adalah Pseudomodule.</li>
+									<li>*name: Pointer ke nama module.</li>
+									<li>size: Ukuran Module</li>
+									<li>nsyms: Jumlah symbol yang diexport.</li>
+									<li>*deps: Pointer ke list modules yang direfer.</li>
+								</ul>
+							</div>
+							<div class="fragment">
+								<ul>
+									<li>usecount: Module usage counter. Counter ditambah ketika dipakai dan dikurang ketika diterminates.</li>
+									<li>ndeps: Jumlah module yang direfer</li>
+									<li>flags: Module flags</li>
+									<li>*syms: Pointer tke system table dari module tersebut.</li>
+									<li>*refs: Pointer to list modules yang menggunakan modules ini.</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+					<section>
+						<img src="img/linux/dp2.jpg" alt="">
 					</section>
 				</section>
+
 				<!-- Kernel Modules -->
 				<section>
 					<section>
@@ -258,12 +311,42 @@
 					</section>
 					<section>
 						<h4>Driver Registration</h4>
-						<p style="font-size: 0.8em">Kernel me-maintain tabel dinamik dari semua driver yang diketahui dan menyediakan beberapa langkah/perintah 
+						<p style="font-size: 0.68em">Kernel me-maintain tabel dinamik dari semua driver yang diketahui dan menyediakan beberapa langkah/perintah 
 							untuk memperbolehkan menambah driver tambahan atau menghapusnya secara bebas dari tabel.</p>
-						<p style="font-size: 0.8em">Kernel juga memastikan akan selalu memanggil module’s startup routine ketika module tersebut di-load ke 
+						<p style="font-size: 0.68em">Kernel juga memastikan akan selalu memanggil module’s startup routine ketika module tersebut di-load ke 
 							kernel serta memanggil module’s cleanup routine saat di-unload.</p>
 					</section>
+					<section style="text-align: left; font-size: 0.7em">
+						<p>Setiap module dapat mendaftarkan beberapa fungsionalitas. </p>
+						<div class="fragment">
+							<p>Registration Tables biasanya terdiri dari beberapa tipe:</p>
+							<ul>
+								<li><b>Device Drivers</b> : character devices (seperti printers, terminals, and mice), block devices (disk drives), dan network interface devices.</li>
+								<li><b>File Systems</b> : format untuk menyimpan data. Saat ini, format yang paling banyak dipakai : ext4.</li>
+								<li><b>Network Protocols</b> : TCP, UDP, packet filtering rules, firewall, dkk.</li>
+								<li><b>Binary Format</b> : membaca, menulis, dan mengeksekusi file.</li>
+							</ul>
+						</div>
+					</section>
+					<section style="text-align: left">
+						<h4>Conflict Resolution</h4>
+						<h4 class="fragment" style="color: red;">PROBLEM?</h4>
+						<div style="font-size: 0.7em">
+							<p class="fragment">PC hardware semakin banyak konfigurasi dan semakin banyak jumlah device driver seperti network cards dan video display adapters dari berbagai aplikasi, merk, dan lain sebagainya. Akibatnya untuk me-manage konfigurasi dari hardware menjadi lebih sulit apalagi jika diimplementasikan secara modular menjadi variabel yang dinamis.</p>
+							<ul class="fragment">
+								<li>Mencegah modul untuk mengakses hardware resources secara bersamaan.</li>
+								<li>Mencegah autoprobes -> auto detect devices.</li>
+								<li>Mencegah konflik yang muncul dari driver-driver yang mengakses hardware yang sama.</li>
+							</ul>
+						</div>
+					</section>
+					<section style="text-align: left; font-size: 0.7em">
+						<p>Caranya:</p>
+						<p class="fragment">Kernel menyediakan list dari hardware resources yang sudah di-allocate. </p>
+						<p class="fragment">Saat device driver akan mengakses resource tersebut, driver tersebut akan me-reserve pada database kernel agar system administrator mengetahui dan menentukan resource mana yang sedang digunakan saat itu.</p>
+					</section>
 				</section>
+
 				<!-- Process Management -->
 				<section>
 					<section>
@@ -366,7 +449,7 @@
 					</section>
 					<section style="text-align: left">
 						<h3>Symmetric Multiprocessing</h3>
-						<p style="font-size: 0.7em"></p>
+						<p style="font-size: 0.7em">Mulai ada di Linux 2.0 Kernel, yaitu memperbolehkan sebuah proses dieksekusi secara parallel dalam prosesor-prosesor yang berbeda. Pada saat itu hanya satu prosesor yang boleh mengeksekusi satu kernel-code.</p>
 					</section>
 				</section>
 
@@ -375,6 +458,50 @@
 					<section>
 						<h1>Memory Management</h1>
 					</section>
+					<section>
+						<h3>Mempunyai <b>dua komponen</b></h3>
+						<div style="display: flex; font-size: 0.6em">
+							<p class="fragment">Yang pertama berperan dalam pada alokasi dan pembebasan memory fisik sperti halaman, kumpulan halaman dan block kecil dari RAM</p>
+							<p class="fragment">Yang kedua menangani virtual memory dimana memory dipetakan ke alamat dari proses yang sedang berjalan.</p>
+						</div>
+						<p class="fragment" style="font-size: 0.75em; color: #00a5c2">Karena batasan hardware yang spesifik, Linux membagi memory fisik menjadi 4 zona berbeda.</p>
+						<p class="fragment" style="font-size: 0.85em; color: aqua">ZONE DMA,ZONE DMA32, ZONE NORMAL,ZONE HIGHMEM.</p>
+					</section>
+					<section>
+						<img src="img/linux/mm1.jpg" alt="">
+					</section>
+					<section style="text-align: left">
+						<h3>Pengaturan memory fisik</h3>
+						<div style="font-size: 0.7em">
+							<p class="fragment">Pengalokasi halaman mengalokasikan dan membebaskan semua halaman fisik. Pengalokasi menggunakan algoritma buddy - heap untuk menjaga alur dari halaman fisik yang tersedia. </p>
+							<p class="fragment">Berikut rincian algoritma dari Buddy Heap :</p>
+							<ol class="fragment">
+								<li>Setiap daerah memory yang dapat dialokasikan dipasangkan dengan daerah memory yang bersebelahan.</li>
+								<li>Setiap dua alokasi partner memory dibebaskan, keduanya membentuk daerah yang lebih besar.</li>
+								<li>Jika suatu permintaan memory kecil tidak dapat dipenuhi melalui alokasi memory bebas tersebut(yang berukuran sama) maka daerah memori bebas yang lebih besar dibagi menjadi 2 bagian untuk memenuhi permintaan</li>
+							</ol>
+						</div>
+					</section>
+					<section>
+						<img src="img/linux/mm2.jpg" alt="">
+					</section>
+					<section style="text-align: left">
+						<h3>Virtual Memory</h3>
+						<p class="fragment" style="font-size: 0.7em">Sistem virtual memory pada Linux mengurusi ruang alamat yang tampak pada setiap proses. Sistem tersebut membuat halaman dari virtual memory sesuai permintaan dan mengatur pemuatan dari halaman tersebut dari disk atau menukarkannya keluar dari disk sebagaimana yang diperlukan.</p>
+						<p class="fragment" style="font-size: 0.7em">Pengelola virtual memory mengurusi dua view terpisah ruang alamat yang diproses, yaitu:</p>
+						<ul class="fragment" style="font-size: 0.7em">
+							<li>Logical view yang mendeskripsikan instruksi yang menyangkut susunan dari ruang alamat.</li>
+							<li>Physical view dari setiap ruang alamat yang disimpan pada tabel halaman hardware untuk suatu proses.</li>
+						</ul>
+					</section>
+					<section style="text-align: left">
+						<h3>Excecuting and Loading User Program</h3>
+						<p class="fragment" style="font-size: 0.7em">Linux mengurusi tabel dari fungsi untuk pemuatan program. Registrasi dari pemuat ganda yang rutin mengijinkan Linux untuk mendukung ELF dan a.out format biner. Pada awalnya halaman file biner dipetakan ke dalam virtual memory. Sebuat ELF yang berformat file biner terdiri dari header diikuti beberapa bagian halaman berbaris.</p>
+						</ul>
+					</section>
+					<section>
+						<img src="img/linux/mm3.jpg" alt="">
+					</section>
 				</section>
 
 				<!-- File Systems -->
@@ -382,7 +509,58 @@
 					<section>
 						<h1>File Systems</h1>
 					</section>
+					<section>
+						<img src="img/linux/fs1.jpg" alt="">
+					</section>
+					<section>
+						<p>Setiap file sistem yang didukung oleh Linux memiliki fungsinya tersendiri untuk tiap operasi file yang didukung Linux.</p>
+						<p class="fragment">Virtual File System akan memanggil fungsi yang sesuai dengan file sistem yang digunakan.</p>
+					</section>
+					<section>
+						<img src="img/linux/fs2.jpg" alt="">
+					</section>
+					<section style="text-align: left">
+						<h3>Implementasi</h3>
+						<div style="font-size: 0.7em">
+							<div class="fragment">
+								<p>Superblock Object</p>
+								<ul>
+									<li><b>Deskripsi general</b> tentang file system itu sendiri</li>
+									<li><b><i>Pointer</i></b> ke root dari file system tersebut</li>
+									<li>Daftar dari file yang saat ini sedang <b>terbuka</b></li>
+									<li>Daftar operasi yang dapat dilakukan pada <b><i>superblock</i></b></li>
+								</ul>
+							</div>
+							<div class="fragment">
+								<p>Inode Object</p>
+								<ul>
+									<li>Mengandung <b>metadata</b> dari sebuah file</li>
+									<li><b>Daftar operasi</b> yang diimplementasikan untuk file system tersebut, yang dapat digunakan oleh VFS</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+					<section style="text-align: left">
+						<div style="font-size: 0.7em">
+							<div>
+								<p>Dentry Object</p>
+								<ul>
+									<li><b>Komponen</b> dalam alamat file</li>
+									<li>Dalam file system Linux setiap Dentry Object yang ada terhubung menjadi sebuah <b>pohon</b>.</li>
+									<li>Mengandung <b><i>Pointer</i></b> ke file yang diasosiasikan dengan Dentry Object</li>
+								</ul>
+							</div>
+							<div class="fragment">
+								<p>File Object</p>
+								<ul>
+									<li>Hanya tercipta ketika file <b>dibuka</b>, maka dihancurkan juga tiap file yang bersangkutan ditutup.</li>
+									<li>Mengandung <b>daftar operasi</b> yang telah diimplementasikan untuk file system yang digunakan. Dapat dipanggil oleh VFS.</li>
+								</ul>
+							</div>
+						</div>
+					</section>
 				</section>
+
 				<!-- I/O -->
 				<section>
 					<section>
@@ -395,13 +573,25 @@
 							Contoh block device adalah hard disk dan floppy disk. Dengan menggunakan hard disk, 
 							kita dapat mengakses data yang tersimpan secara acak.</p>
 					</section>
+					<section style="text-align: left; font-size: 0.7em">
+						<p>Setiap <i>block</i> merepresentasikan unit dimana kernel melakukan proses I/O. 
+							Ketika sebuah block dibaca ke memori, maka akan disimpan ke dalam <b>buffer</b>. 
+							Untuk membaca dan menulis konten buffer dari / ke driver block device, 
+							digunakanlah <b>Request manager</b></p>
+					</section>
 					<section style="text-align: left">
 						<h4>Character Devices</h4>
 						<p style="font-size: 0.7em">terdiri dari device seperti mouse dan keyboard. Perbedaan 
 							mendasar antara block dan character device adalah, block devices diakses secara random, 
 							sementara character device diakses secara serial (berurutan). Cara kerja character device 
 							adalah membaca serangkaian karakter secara berurut, misalnya serangkaian karakter yang 
-							ditekan di keyboard ataupun serangkaian data byte yang dikirim melalui serial line.</p>
+							ditekan di keyboard.</p>
+					</section>
+					<section style="text-align: left">
+						<p style="font-size: 0.7em"><b>Line Discipline</b> adalah sebuah interpreter bagi informasi 
+							dari terminal device. Cara kerjanya adalah dengan "menempelkan" aliran data dari terminal 
+							pada standard input dan output pada suatu proses, menyebabkan proses tersebut bisa 
+							berkomunikasi langsung dengan terminal user. Contohnya adalah <i>tty discipline</i>.</p>
 					</section>
 					<section style="text-align: left">
 						<h4>Network Devices</h4>
@@ -410,6 +600,7 @@
 							dengan cara membuka koneksi ke subsistem network pada kernel.</p>
 					</section>
 				</section>
+
 				<!-- IPC -->
 				<section>
 					<section>
@@ -425,13 +616,41 @@
 							menginformasikan bahwa suatu event telah terjadi kepada suatu proses. Suatu proses (termasuk kernel) 
 							dapat mengirimkan signal kepada proses lain, dengan syarat sinyal yang dikirim dimiliki pengguna yang berbeda. </p>
 					</section>
+					<section style="text-align: left">
+						<p style="font-size: 0.8em">Secara internal, kernel tidak menggunakan signal dalam berkomunikasi, melainkan proses yang berjalan dalam mode kernel menggunakan scheduling states dan struktur wait_queue. Saat proses yang sedang berjalan dalam mode kernel menunggu suatu event sampai selesai, proses tersebut dimasukkan ke dalam wait queue event tersebut. Saat event yang dimaksud selesai, semua proses yang berada didalam queue dibangunkan sehingga memperbolehkan banyak proses untuk menunggu suatu event yang sama.</p>
+					</section>
+					<section style="text-align: left">
+						<p style="font-size: 0.8em">Selain itu, cara lain yang diimplementasikan dalam Linux adalah semaphore. Semaphore adalah variabel yang mengontrol  akses suatu storage kepada banyak proses. Proses wait_queue pada kernel secara internal menggunakan implementasi semaphore.</p>
+					</section>
+					<section>
+						<h3>Passing Data among Processes</h3>
+						<p style="font-size: 0.8em; color: aqua;">Dalam Linux, melakukan passing data kepada proses lain dilakukan dengan beberapa mekanisme, diantaranya :</p>
+					</section>
+					<section style="text-align: left;">
+						<h3>Pipe</h3>
+						<img src="img/linux/ipc1.jpg" alt="">
+						<p style="font-size: 0.65em">Sebuah child process diberikan akses yaitu Pipe kepada parent process untuk melakukan write/read data. Data yang di write pada satu sisi bisa di read di sisi lainnya.</p>
+					</section>
+					<section style="text-align: left;">
+						<h3>Shared Memory</h3>
+						<img src="img/linux/ipc2.jpg" alt="">
+						<p style="font-size: 0.65em">Shared Memory merupakan memori tambahan yang ditambahkan pada address space 
+							pemiliknya untuk digunakan sehingga proses - proses yang terkait dapat mengaksesnya karena memiliki segmen memori yang sama.
+							</p>
+					</section>
 				</section>
+
 				<!-- Network Structure -->
 				<section>
 					<section>
 						<h1>Network Structure</h1>
+						<p class="fragment" style="font-size: 0.7em">Secara internal, networking pada Linux dibagi menjadi 3 layer, yaitu:</p>
+					</section>
+					<section>
+						<img src="img/linux/ns1.jpg" alt="">
 					</section>
 				</section>
+
 				<!-- Security -->
 				<section>
 					<section>
