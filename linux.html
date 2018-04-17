@@ -138,25 +138,26 @@
 					</section>
 					<section style="font-size: 0.7em; text-align: left">
 						<h4>Kernel</h4>
-						<p>kernel melakukan berbagai abstraksi dari sebuah sistem operasi, seperti : Signal, System calls, Process dan Sheduler, 
-							Virtual Memory, File systems, Network protocols, Character Device Drivers, Block Device Drivers, Network Device Drivers, Trap dan Faults, Physical Memory, Interrupts.</p>
+						<p>kernel melakukan berbagai abstraksi dari sebuah sistem operasi, seperti : Signal, System calls, Process dan Sheduler, Virtual Memory, File systems, Network protocols, Character Device Drivers, Block Device Drivers, Network Device Drivers, Trap dan Faults, Physical Memory, Interrupts.</p>
 					</section>
 					<section>
 						<img src="img/linux/dp1.jpg" alt="">
 					</section>
 					<section style="font-size: 0.7em; text-align: left">
 						<h4>System Libraries</h4>
-						<p>merupakan kumpulan fungsi-fungsi standar yang dipakai oleh aplikasi untuk dapat berinteraksi dengan kernel. Fungsi - fungsi ini mengimplemen fungsionalitas
-							 yang tidak membutuhkan privilage penuh dari kernel code. Library yang paling penting : C library (libc). System libraries memberikan berbagai fungsionalitas,
-							  baik dari syscall yang paling basic hingga kompleks, seperti menjalankan syscall untuk mentransfer kontrol dari user mode ke kernel mode, file handling,
-							   algoritma sorting, fungsi matematis, manipulasi string.</p>
+						<p>merupakan kumpulan fungsi-fungsi standar yang dipakai oleh aplikasi untuk dapat berinteraksi dengan kernel.</p>
+						<p class="fragment">Contoh library yang sering dipakai : C library (libc).</p>
+						<p class="fragment">System libraries memberikan berbagai fungsionalitas, seperti mentransfer kontrol dari user mode ke kernel mode, file handling, dsb.</p>
 					</section>
 					<section style="font-size: 0.7em; text-align: left">
 						<h4>System Utilities</h4>
-						<p>program yang menjalankan tugas khusus secara tersendiri. Beberapa utilitas dijalankan sekali saja dan kemudian melakukan konfigurasi beberapa aspek pada sistem. 
-							Yg lainnya, yaitu daemons dijalankan secara permanen : contoh, <b>menerima koneksi (http daemon, ftp, ssh, telnet, bisa juga service, dkk) serta menerima logon requests, 
-							mengupdate log file</b>, dan masih banyak lagi. Salah satu system utilities yang paling penting yaitu Shell, sebagai standard command line interface untuk UNIX. 
-							Kebanyakan linux pakai BASH (Bourne Again Shell). Ada jg shell yang lain sepert ZSH, yaitu Z shell. Shell dipakai untuk menerima inputan dari user dan kemudian menjalankan perintah yang diminta. </p>
+						<p>program yang menjalankan tugas khusus secara tersendiri. Contohnya daemons yang dijalankan secara permanen seperti:</p>
+						<ul class="fragment">
+							<li>Menerima koneksi (http daemon, ftp, ssh, telnet, bisa juga service, dkk)</li>
+							<li>Menerima logon requests</li>
+							<li>Mengupdate log file dsb.</li>
+						</ul>
+						<p class="fragment">Contoh lain yaitu Shell sebagai standard command line interface untuk UNIX. Kebanyakan linux pakai BASH (Bourne Again Shell). Ada juga shell yang lain seperti ZSH.</p>
 					</section>
 					<section style="font-size: 0.7em">
 						<h3>Kernel vs User</h3>
