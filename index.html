@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="en">
 
 <head>
 	<!-- Title -->
-	<title>Qlapa Intern Test</title>
+	<title>Ahmad Fahmi</title>
 
 	<!-- Meta -->
 	<meta charset="UTF-8">
@@ -14,45 +14,163 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Barlow:400,600">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
-	<link rel="stylesheet" type="text/css" href="css/qlapa.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 
 	<!-- Scripts -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" async></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" async></script>
+	<script type="text/javascript" src="js/typewrite.js" async></script>
 	<script type="text/javascript" src="js/main.js" async></script>
+	<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js" async></script>
 
 </head>
 
 <body>
-	<div class="container" id="banner">
-		<div class="col-md-6" id="main-banner">
-			<a href="https://qlapa.com/" target="_blank">
-				<img src="img/banner_collection.jpg">
+	<!-- Navbar -->
+	<!--
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Home</a></li>
+					<li><a href="#portfolio">Portfolio</a></li>
+					<li><a href="#">Resume</a></li>
+					<li><a href="#contact">Contact</a></li>
+		  		</ul>
+			</div>
+		</nav>
+		-->
+
+	<!-- Header -->
+	<div class="jumbotron" href="#portfolio">
+		<div class="inside">
+			<h1 id="first-title">Hi! I'm Fahmi.</h1>
+			<div style="display: inline-flex; text-align: center">
+				<h2 id="second-title-first">I do &nbsp;</h2>
+				<h2 id="second-title"></h2>
+			</div>
+		</div>
+		<div class="container" id="btn-nav">
+			<a href="#portfolio">
+				<button class="buttons">See My Portfolio</button>
+			</a>
+			<a href="https://drive.google.com/open?id=1oYeZryI4j0-MXry4Fv9-RP7Cz6Cn9oLQ" target="_blank">
+				<button class="buttons">See My Resume</button>
+			</a>
+			<a href="#contact">
+				<button class="buttons">Contact Me!</button>
 			</a>
 		</div>
-		<div class="col-md-6" id="main-slider">
-			<div class="row" id="main-slider-grid">
-				<div class="col-md-1 button">
-					<p><</p>
-				</div>
-				<div class="col-md-10 col-xs-12" id="main-slider-content">
-					<div class="slider-content-part">
-						<img src="img/85441fee4a6329608916468c674819b0fa960a4280df4061c71980f6f6b788b6.jpg" class="main-slider-image">
-						<img src="img/5e937d56a9892cec2d3ab26bd31b3cbba651967004fd163b8691e4ec752de2fa.jpg" class="main-slider-image">
-						<img src="img/b613a5ff53e125ebca72eae335bb677e02b54ebcae77a2bfdf6938b2458f398a.jpg" class="main-slider-image">
-						<img src="img/e245316fc19191c72ab86ff1d04a423a4369a6d9b43bf6624c221d29045128af.jpg" class="main-slider-image">
-					</div>
-					<div class="slider-content-part">
-						<img src="img/c080db08d24b3b19b6721eaefea7e973ed6fa235da457485ae06bab62479429a.jpg" class="main-slider-image">
-						<img src="img/0d728814f2ad8962fdad8b5269bac43d9126d9abab1507a40fac1173a1d0fe6b.jpg" class="main-slider-image">
-						<img src="img/3dea4f675f0185c96d46eb15472f2812a617565e6a0b09e373df8ce562153913.jpg" class="main-slider-image">
-						<img src="img/4d4790f14068c4b348fe0685e2fe379293e37cdc25593010a5650639f784f28a.jpg" class="main-slider-image">
-					</div>
-				</div>
-				<div class="col-md-1 button">
-					<p>></p>
-				</div>
+	</div>
+
+	<!-- I Do UI/UX -->
+	<div class="container-fluid section" id="portfolio">
+		<div class="sec-intro">
+			<h1 class="sec-title" style="color: #00A0B2">I Do
+				<b>UI/UX Design,</b>
+			</h1>
+			<br>
+			<p class="sec-cont">Most of my UI/UX projects are done for competitions.</p>
+		</div>
+		<div class="row" id="port">
+			<div class="col-md-4" id="part1">
+				<h1 class="part-title" style="color: #00384d">Helpie!</h1>
+				<a href="helpie.html">
+					<button class="btn-port-light">See Project</button>
+				</a>
+				<p class="part-cont">
+					Helpie! is an app where people who are very busy can hire helpers to do their daily household chores. This idea won the
+					<b>1st place of Inkubator IT Idea Competition 2018</b>, an idea competition held by HMIF ITB.
+				</p>
+				<img class="img1" src="img\ui1.png" alt="helpie">
 			</div>
+			<div class="col-md-4" id="part2">
+				<h1 class="part-title" style="color: #00384d">Dewaweb</h1>
+				<a href="dewaweb.html">
+					<button class="btn-port-light">See Project</button>
+				</a>
+				<p class="part-cont">
+					This is my redesigned version of Dewaweb's UI. Was done for
+					<b>BSLC (BINUS Student Learning Community) Web Design Competition 2017</b>.
+				</p>
+				<img class="img2" src="img\ui2.png" alt="dewaweb">
+			</div>
+			<div class="col-md-4" id="part3">
+				<h1 class="part-title" style="color: white">Akuguru</h1>
+				<a href="akuguru.html">
+					<button class="btn-port-dark">See Project</button>
+				</a>
+				<p class="part-cont" style="color: white">
+					Akuguru is a project where we gather young people who want to teach with the place in need, e.g. slum areas. This idea was
+					managed to
+					<b>Top 100 Telkom Socio Digi Leaders 2017</b>, a competition held by Telkom Indonesia.
+				</p>
+				<img class="img1" src="img\ui3.png" alt="akuguru">
+			</div>
+		</div>
+	</div>
+
+	<!-- I Create Illustration -->
+	<div class="container-fluid section" id="image-grid">
+		<div class="sec-intro">
+			<h1 class="sec-title" style="color: rgb(253, 143, 0)">..as well as
+				<b>Illustration</b> and
+				<b>Graphic Design.</b>
+			</h1>
+			<br>
+			<p class="sec-cont">Three words: Unique, Detailed, Awesome.</p>
+		</div>
+		<div class="row">
+			<div class="column">
+				<img class="image" src="img/gd1.png" alt="">
+				<img class="image" src="img/gd6.png" alt="">
+			</div>
+			<div class="column">
+				<img class="image" src="img/gd5.png" alt="">
+				<img class="image" src="img/gd4.png" alt="">
+			</div>
+			<div class="column">
+				<img class="image" src="img/gd3.png" alt="">
+				<img class="image" src="img/gd2.png" alt="">
+			</div>
+			<div class="column">
+				<img class="image" src="img/gd8.png" alt="">
+				<img class="image" src="img/gd7.png" alt="">
+			</div>
+		</div>
+	</div>
+
+	<!-- Create image modal -->
+	<div id="myModal" class="modal">
+		<span class="close">&times;</span>
+		<img class="modal-content" id="img01">
+	</div>
+
+	<!-- Contact Me -->
+	<div class="container-fluid" id="contact">
+		<div class="container-fluid">
+			<h1>Contact Me!</h1>
+			<br style="line-height: 10vh;">
+			<h2>afahmi3@yahoo.co.id</h2>
+			<h3>
+				<i class="fas fa-phone"></i> +6281299052191</h3>
+			<br style="line-height: 10vh;">
+		</div>
+		<div class="fa-3x" id="contact-icons">
+			<a href="https://www.github.com/ahmadfahmip" target="_blank">
+				<i class="fab fa-github"></i>
+			</a>
+			<a href="https://www.facebook.com/ahmad.fahmi.pratama" target="_blank">
+				<i class="fab fa-facebook"></i>
+			</a>
+			<a href="https://www.linkedin.com/in/ahmadfahmipratama" target="_blank">
+				<i class="fab fa-linkedin"></i>
+			</a>
+			<a href="https://www.instagram.com/afahmip" target="_blank">
+				<i class="fab fa-instagram"></i>
+			</a>
+			<a href="https://www.behance.net/afahmip" target="_blank">
+				<i class="fab fa-behance"></i>
+			</a>
 		</div>
 	</div>
 
