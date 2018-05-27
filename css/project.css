@@ -19,6 +19,12 @@ body {
     margin: 12px;
 }
 
+#uiux-section > p {
+    font-size: 1.3em;
+    margin: 12px;
+    margin-top: 20px;
+}
+
 #uiux-section > .row {
     margin: 0 auto;
 }
@@ -31,7 +37,20 @@ body {
     overflow: hidden;
 }
 
-.uiux-part > a > img {
+.uiux-part > a > div > .img-cover {
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    background: blue;
+    opacity: 0.7;
+}
+
+.uiux-part > a > div > img {
     width: 100%;
     margin-top: -12.5%;
+    transition: 0.4s;
+}
+
+.uiux-part > a:hover > div > img {
+    transform: scale(1.2, 1.2);
 }
