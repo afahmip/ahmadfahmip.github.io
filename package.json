@@ -1,8 +1,8 @@
 {
-  "name": "personal-web",
+  "name": "ahmadfahmip.github.io",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ahmadfahmip.github.io/",
+  "homepage": "https://ahmadfahmip.github.io",
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.6",
     "react": "^16.3.2",
@@ -12,11 +12,11 @@
     "react-scripts": "1.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
