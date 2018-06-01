@@ -7,8 +7,6 @@ import './App.css';
 
 class App extends Component {
   render() {
-    const elapsed = Math.round(this.state.elapsed / 100);
-    const seconds = (elapsed / 10).toFixed(1);
     return (
       <div className="App">
         {/* <div className='Menu'>
