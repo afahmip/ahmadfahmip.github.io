@@ -2,7 +2,7 @@
   "name": "personal-web",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/ahmadfahmip/ahmadfahmip.github.io",
+  "homepage": "https://ahmadfahmip.github.io/",
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.6",
     "react": "^16.3.2",
