@@ -1,9 +1,3 @@
-body {
-    font-family: 'Barlow', sans-serif;
-    padding: 0;
-    margin: 0;
-}
-
 /* --------------
 Table of Contents
 - Utilities
@@ -14,6 +8,7 @@ Table of Contents
 /* Utilities */
 
 .button-big {
+    font-family: 'Barlow', sans-serif;
     background-color: rgba(255, 255, 255, 0);
     border: 2px solid white;
     border-radius: 50px;
@@ -124,13 +119,13 @@ Table of Contents
 }
 
 #projects {
-    background: url('../img/projects.jpg');
+    /* background: url('../img/projects.jpg'); */
     background-size: contain;
     background-position: center;
 }
 
 #artworks {
-    background: url('../img/artworks.jpg');
+    /* background: url('../img/artworks.jpg'); */
     background-size: contain;
     background-position: center;
 }
