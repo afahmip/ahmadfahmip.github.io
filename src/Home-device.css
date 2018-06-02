@@ -1,0 +1,43 @@
+/* Tablet */
+
+@media only screen and (max-width: 768px) {
+    .button-big {
+        font-size: 1em;
+        margin: 1vh 1vw;
+    }
+
+    #introduction > h1 {
+        font-size: 6em;
+    }
+}
+
+/* Mobile */
+
+@media only screen and (max-width: 425px) {
+    .button-big {
+        font-size: 0.8em;
+        margin: 1vh 1vw;
+    }
+
+    #introduction {
+        padding: 30vh 3vw 0 3vw;
+    }
+
+    #introduction > h1 {
+        font-size: 3em;
+    }
+
+    #introduction > h2 {
+        font-size: 1.2em;
+    }
+
+    #contact-icons {
+        padding-top: 5vh;
+    }
+
+    #contact-icons > a {
+        font-size: 0.6em;
+        margin-right: 16px;
+        margin-left: 16px;
+    }
+}
