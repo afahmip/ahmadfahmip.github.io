@@ -14,25 +14,25 @@
 /* Mobile */
 
 @media only screen and (max-width: 425px) {
-    #banner {
+    .banner {
         height: 55vh;
     }
 
-    #banner > h1 {
+    .banner > h1 {
         font-size: 4em;
         padding-top: 12vh;
     }
 
-    #banner > p {
+    .banner > p {
         font-size: 1.2em;
     }
 
-    #banner > .row {
+    .banner > .row {
         font-size: 1em;
         padding-top: 20px;
     }
 
-    #banner > .row > .col-md-4 > p {
+    .banner > .row > .col-md-4 > p {
         margin: 0;
         padding: 0;
     }
@@ -61,6 +61,7 @@
 
     #two-apps {
         height: 100%;
+        display: block;
     }
 
     #two-apps > .col-md-5 > p, #order > .col-md-5 > p {

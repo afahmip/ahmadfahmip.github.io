@@ -36,7 +36,7 @@ const Kultiva = () => (
             </div>
         </div>
 
-        <div className="container-fluid row" id="two-apps">
+        <div className="container-fluid" id="two-apps">
             <div className="col-md-5">
                 <h1 className="sub-title">TWO CLIENT-SIDE APPS</h1>
                 <br/>
