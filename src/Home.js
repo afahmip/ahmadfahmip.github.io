@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import './Home.css';
-import './Home-device.css';
+import './css/Home.css';
+import './css/Home-device.css';
 
 const Home = () => (
     <div className="jumbotron" id="banner">

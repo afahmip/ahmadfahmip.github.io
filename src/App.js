@@ -3,7 +3,7 @@ import { Route, Link, Switch } from 'react-router-dom';
 import logo from './logo.svg';
 import Home from './Home';
 import Project from './Project';
-import './App.css';
+import './css/App.css';
 
 class App extends Component {
   render() {
@@ -14,8 +14,10 @@ class App extends Component {
           <Link to='/projects'>Project</Link>
         </div> */}
         <div className="App-content">
+        <Switch>
           <Route path="/projects" component={Project}/>
           <Route path="/" component={Home}/>
+        </Switch>
         </div>
       </div>
     );

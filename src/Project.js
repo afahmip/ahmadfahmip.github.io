@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import './Project.css';
+import './css/Project.css';
+import './css/Project-device.css';
+import kultiva from './img/project/kultiva.jpeg';
+import helpie from './img/project/helpie.jpeg';
+import dewaweb from './img/project/dewaweb.jpg';
 
 class Project extends Component {
     render() {
@@ -12,14 +16,14 @@ class Project extends Component {
                     <div className="col uiux-part">
                         <a href="kultiva.html" target="_blank">
                             <div>
-                                <img src="img/project/kultiva.jpeg" alt=""/>
+                                <img src={kultiva} alt="kultiva"/>
                             </div>
                         </a>
                     </div>
                     <div className="col uiux-part">
                         <a href="helpie.html" target="_blank">
                             <div>
-                                <img src="img/project/helpie.jpeg" alt=""/>
+                                <img src={helpie} alt="helpie"/>
                             </div>
                         </a>
                     </div>
@@ -28,7 +32,7 @@ class Project extends Component {
                     <div className="col uiux-part">
                         <a href="dewaweb.html" target="_blank">
                             <div>
-                                <img src="img/project/dewaweb.jpg" alt=""/>
+                                <img src={dewaweb} alt="dewaweb"/>
                             </div>
                         </a>
                     </div>
