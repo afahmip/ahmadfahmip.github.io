@@ -1,0 +1,76 @@
+/* --------------
+Table of Contents
+- Utilities
+- Navbar
+- Header
+-------------- */
+
+/* Utilities */
+
+.button-big {
+    font-family: 'Barlow', sans-serif;
+    background-color: rgba(255, 255, 255, 0);
+    border: 2px solid white;
+    border-radius: 50px;
+    color: white;
+    padding: 10px 32px;
+    margin: 2vh 2vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.5em;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button-big:hover {
+    background-color: white;
+    color: #ff0098;
+}
+
+/* Header */
+
+#banner {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    transition: 0.4s;
+    text-align: center;
+    background: white;
+}
+
+#introduction {
+    padding-top: 25vh;
+    color: rgb(32, 32, 32);
+    transition: 0.4s;
+}
+
+#introduction > h1 {
+    font-size: 9em;
+    font-weight: bold;
+    transition: 0.4s;
+}
+
+#introduction > h2 {
+    font-size: 2.5em;
+    font-weight: 400;
+    color: #e4d500;
+}
+
+#contact-icons {
+    padding-top: 8vh;
+}
+
+#contact-icons > a {
+    font-size: 1em;
+    /* color: rgb(148, 148, 148); */
+    color: white;
+    text-decoration: none;
+    margin-right: 30px;
+    margin-left: 30px;
+    transition-duration: 0.4s;
+}
+
+#contact-icons > a:hover {
+    font-size: 1.3em;
+}

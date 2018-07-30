@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Route, Link } from "react-router-dom";
-import './css/Project.css';
-import './css/Project-device.css';
-import kultiva from './img/project/kultiva.jpeg';
-import helpie from './img/project/helpie.jpeg';
-import dewaweb from './img/project/dewaweb.jpg';
-import Kultiva from './Kultiva';
+import React from 'react';
+import { Route, Link } from "react-router-dom";
+import 'css/Project.css';
+import 'css/Project-device.css';
+import kultiva from 'img/project/kultiva.jpeg';
+import helpie from 'img/project/helpie.jpeg';
+import dewaweb from 'img/project/dewaweb.jpg';
+import Kultiva from 'components/projects/Kultiva';
 
 const Project = ({ match }) => (
     <div>

@@ -2,13 +2,13 @@ body {
     font-family: 'Barlow', sans-serif;
     padding: 0;
     margin: 0;
-    background: #1a1a1a;
+    background: #ffffff;
 }
 
 /* UI/UX */
 
 #uiux-section {
-    color: white;
+    color: rgb(41, 41, 41);
     display: block;
     margin: 0;
     padding: 5vh 10vw 0 10vw;

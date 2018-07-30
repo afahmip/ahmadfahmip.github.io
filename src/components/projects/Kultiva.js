@@ -1,9 +1,9 @@
 import React from 'react';
-import './css/Kultiva.css';
-import './css/Kultiva-device.css';
-import farmer from './img/project/kultiva/farmer.jpeg';
-import twoapp_min from './img/project/kultiva/twoapp-min.png';
-import order from './img/project/kultiva/order.png';
+import 'css/Kultiva.css';
+import 'css/Kultiva-device.css';
+import farmer from 'img/project/kultiva/farmer.jpeg';
+import twoapp_min from 'img/project/kultiva/twoapp-min.png';
+import order from 'img/project/kultiva/order.png';
 
 const Kultiva = () => (
     <div>
@@ -66,19 +66,19 @@ const Kultiva = () => (
             <h1>Thanks for watching!</h1>
             <br/><br/>
             <div className="fa-2x">
-                <a href="https://www.github.com/ahmadfahmip" target="_blank">
+                <a href="https://www.github.com/ahmadfahmip" target="_blank" rel="noopener noreferrer">
                     <i className="fab fa-github"></i>
                 </a>
-                <a href="https://www.facebook.com/ahmad.fahmi.pratama" target="_blank">
+                <a href="https://www.facebook.com/ahmad.fahmi.pratama" target="_blank" rel="noopener noreferrer">
                     <i className="fab fa-facebook"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/ahmadfahmipratama" target="_blank">
+                <a href="https://www.linkedin.com/in/ahmadfahmipratama" target="_blank" rel="noopener noreferrer">
                     <i className="fab fa-linkedin"></i>
                 </a>
-                <a href="https://www.instagram.com/afahmip" target="_blank">
+                <a href="https://www.instagram.com/afahmip" target="_blank" rel="noopener noreferrer">
                     <i className="fab fa-instagram"></i>
                 </a>
-                <a href="https://www.behance.net/afahmip" target="_blank">
+                <a href="https://www.behance.net/afahmip" target="_blank" rel="noopener noreferrer">
                     <i className="fab fa-behance"></i>
                 </a>
             </div>
