@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Home from 'views/Home';
-import Project from 'views/Project';
-import Menu from 'components/partials/Menu';
-import 'css/App.css';
-import 'css/Fonts.css';
+import HomePage from 'containers/HomePage';
+import Menu from 'components/Menu';
 
 class App extends Component {
   render() {
@@ -13,8 +10,7 @@ class App extends Component {
         <div className="App-content">
         <Menu/>
         <Switch>
-          <Route path="/projects" component={Project}/>
-          <Route path="/" component={Home}/>
+          <Route path="/" component={HomePage}/>
         </Switch>
         </div>
       </div>

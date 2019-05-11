@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Fade } from 'react-reveal'
 import { Link } from 'react-router-dom'
-import 'css/partials/Menu.css'
+import './index.scss'
 
 class Menu extends Component {
     state = {
