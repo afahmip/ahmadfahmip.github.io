@@ -1,13 +1,15 @@
 {
-  "main.css": "static/css/main.4848d935.css",
-  "main.css.map": "static/css/main.4848d935.css.map",
-  "main.js": "static/js/main.f17906f3.js",
-  "main.js.map": "static/js/main.f17906f3.js.map",
-  "static\\media\\dewaweb.jpg": "static/media/dewaweb.f4dcde99.jpg",
-  "static\\media\\farmer.jpeg": "static/media/farmer.9f2a67bf.jpeg",
-  "static\\media\\helpie.jpeg": "static/media/helpie.1936bf37.jpeg",
-  "static\\media\\kultiva.jpeg": "static/media/kultiva.3303228b.jpeg",
-  "static\\media\\logo.svg": "static/media/logo.5d5d9eef.svg",
-  "static\\media\\order.png": "static/media/order.53362e68.png",
-  "static\\media\\twoapp-min.png": "static/media/twoapp-min.fef84647.png"
+  "files": {
+    "main.css": "/static/css/main.a6671c7b.chunk.css",
+    "main.js": "/static/js/main.68311ab7.chunk.js",
+    "main.js.map": "/static/js/main.68311ab7.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/js/2.7292dd0e.chunk.js": "/static/js/2.7292dd0e.chunk.js",
+    "static/js/2.7292dd0e.chunk.js.map": "/static/js/2.7292dd0e.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.7ef95a453c95df0f39d6e9ee52bc106c.js": "/precache-manifest.7ef95a453c95df0f39d6e9ee52bc106c.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.a6671c7b.chunk.css.map": "/static/css/main.a6671c7b.chunk.css.map"
+  }
 }
