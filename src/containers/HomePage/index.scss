@@ -1,4 +1,11 @@
 $cyan: #00B3CF;
+$medium-maxfont: 2vh;
+$medium-paddingtop: 1rem;
+$medium-border: 1px;
+
+@media all and (max-width: 1024px) and (orientation:landscape) {
+  $medium-paddingtop: 0.5rem;
+}
 
 #home {
   .intro {
@@ -6,6 +13,20 @@ $cyan: #00B3CF;
       font-family: 'Noticia Text';
       font-size: 4vh;
       font-weight: 700;
+
+      /* Mobile Phone */
+      @media all and (max-width: 480px) {
+        font-size: 4.5vh;
+      }
+    }
+    h1:nth-child(3) {
+      .tail {
+        background-color: black;
+        height: 0.35rem;
+        width: 3rem;
+        margin-top: 3.5vh;
+        margin-left: 0.75rem;
+      }
     }
     span {
       color: $cyan;
@@ -17,25 +38,76 @@ $cyan: #00B3CF;
     }
     .medium {
       letter-spacing: 0.5vh;
-      border: 1px solid $cyan;
-      padding: 1rem 2rem;
-      background-color: white;
+      border: $medium-border solid $cyan;
+      background-color: rgba(0,0,0,0);
+      padding: 0;
       cursor: pointer;
       font-size: 1.5vh;
       transition-duration: 0.4s;
       align-items: center;
-      p {
-        font-family: 'Noticia Text';
-      }
+      overflow-x: hidden;
+      width: 35vw;
       i {
-        font-size: 2vh;
-      }
-      p:last-child {
-        font-weight: bold;
+        font-size: $medium-maxfont;
       }
       &:hover {
-        background-color: $cyan;
         color: white;
+        >.over {
+          width: 100%;
+        }
+      }
+      .over {
+        background-color: $cyan;
+        width: 0;
+        height: calc(#{$medium-maxfont} + 2*#{$medium-paddingtop} + #{$medium-border});
+        transition-duration: 0.4s;
+      }
+      .row {
+        padding: $medium-paddingtop calc(2*#{$medium-paddingtop});
+        position: absolute;
+        p {
+          font-family: 'Noticia Text';
+        }
+        p:last-child {
+          max-width: 20vw;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-weight: bold;
+        }
+
+        /* Mobile Phone */
+        @media all and (max-width: 480px) {
+          padding: 1rem;
+          p:last-child {
+            max-width: 70vw;
+          }
+          p:nth-child(2) {
+            display: none;
+          }
+        }
+
+        /* iPad */
+        @media all and (min-width: 481px) and (orientation:portrait) {
+          p:last-child {
+            max-width: 45vw;
+          }
+        }
+
+        /* Mobile landscape */
+        @media all and (max-width: 1024px) and (orientation:landscape) {
+          padding: 1rem;
+        }
+      }
+
+      /* Mobile Phone & iPad */
+      @media all and (orientation:portrait) {
+        width: 85vw;
+      }
+
+      /* Mobile landscape */
+      @media all and (max-width: 1024px) and (orientation:landscape) {
+        width: 40vw;
       }
     }
   }

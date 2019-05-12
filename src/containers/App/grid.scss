@@ -7,3 +7,64 @@
   padding: 0 20vw;
   margin: 15vh 0;
 }
+
+@media all and (min-width: 1024px) and (max-width: 1280px) { }
+
+/* iPad & iPad Pro */
+@media all and (min-width: 768px) and (max-width: 1024px) { }
+
+/* Mobile Phone */
+@media all and (min-width: 480px) and (max-width: 768px) {
+  // .page-container {
+  //   padding: 0 5vw;
+  // }
+}
+
+/* Mobile Phone */
+@media all and (max-width: 480px) {
+  .page-container {
+    padding: 0 5vw;
+  }
+}
+
+
+/* Portrait */
+@media screen and (orientation:portrait) {
+  .page-container {
+    padding: 0 5vw;
+  }
+}
+/* Landscape */
+@media screen and (orientation:landscape) { /* Landscape styles here */ }
+
+
+/* CSS for iPhone, iPad, and Retina Displays */
+
+/* Non-Retina */
+@media screen and (-webkit-max-device-pixel-ratio: 1) {
+}
+
+/* Retina */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5) {
+}
+
+/* iPhone Portrait */
+@media screen and (max-device-width: 480px) and (orientation:portrait) {
+} 
+
+/* iPhone Landscape */
+@media screen and (max-device-width: 480px) and (orientation:landscape) {
+  
+}
+
+/* iPad Portrait */
+@media screen and (min-device-width: 481px) and (orientation:portrait) {
+  
+}
+
+/* iPad Landscape */
+@media screen and (min-device-width: 481px) and (orientation:landscape) {
+}
