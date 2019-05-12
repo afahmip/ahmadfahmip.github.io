@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import HomePage from 'containers/HomePage';
 import Menu from 'components/Menu';
+import './index.scss';
 
 class App extends Component {
   render() {
