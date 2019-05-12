@@ -14,43 +14,24 @@ class Menu extends Component {
   }
 
   render() {
-    var menuIconClass = this.state.isClicked ? 'menu-icon menu-icon__change' : 'menu-icon'
-    var menuListDisplay = this.state.isClicked ? 'menu-list menu-list__change' : 'menu-list'
     return (
       <div id='menu'>
-        <div className={menuIconClass} onClick={this.menuClick}>
-          <div className='menu-icon__bar'/>
-          <div className='menu-icon__bar'/>
-          <div className='menu-icon__bar'/>
-        </div>
-        <div className={menuListDisplay}>
-          <div className='menu-list__content'>
-            <ul className='menu-list__ul'>
-              <Fade delay={800}>
-                <Link to='/projects'>
-                  <li key='1'>
-                    Projects
-                    <div className='menu-list__ul-row'/>
-                  </li>
-                </Link>
-              </Fade>
-              <Fade delay={1000}>
-                <Link to='#'>
-                  <li key='2'>
-                    Artworks
-                    <div className='menu-list__ul-row'/>
-                  </li>
-                </Link>
-              </Fade>
-              <Fade delay={1200}>
-                <Link to='#'>
-                  <li key='3'>
-                    Contact Me
-                    <div className='menu-list__ul-row'/>
-                  </li>
-                </Link>
-              </Fade>
-            </ul>
+        <div id="menu_header" className="center-horizontal row">
+          <div className="row">
+            <Link to="/" id="logo" className="hoverable">
+              <h1>ahmad<b>fahmi</b></h1>
+              <div />
+            </Link>
+          </div>
+          <div id="links" className="row">
+            <Link to="/" id="logo" className="hoverable">
+              <h1>profile</h1>
+              <div />
+            </Link>
+            <Link to="/" id="logo" className="hoverable">
+              <h1>resume</h1>
+              <div />
+            </Link>
           </div>
         </div>
       </div>

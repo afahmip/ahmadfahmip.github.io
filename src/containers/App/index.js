@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-content">
-        {/* <Menu/> */}
+        <Menu/>
         <Switch>
           <Route path="/" component={HomePage}/>
         </Switch>
