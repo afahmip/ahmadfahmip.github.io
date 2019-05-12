@@ -13,7 +13,7 @@ class Menu extends Component {
     this.setState({ isClicked: !this.state.isClicked })
   }
 
-  render() {
+  render () {
     return (
       <div id='menu'>
         <div id="menu_header" className="center-horizontal row">
@@ -39,4 +39,4 @@ class Menu extends Component {
   }
 }
 
-export default Menu;
+export default Menu

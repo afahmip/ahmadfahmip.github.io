@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import Portfolio from './Portfolio'
 import './index.scss'
 
 class HomePage extends Component {
@@ -44,7 +45,7 @@ class HomePage extends Component {
           <h1>self-claimed <i>hackathlete</i></h1>
           <h1 className="row">based in Bandung, ID_</h1>
           {/* <div className="tail" /> */}
-          <p className="short-desc">Passion-driven self-taught engineer. For me, everything is an art.<br/>It's a masterpiece that must be carefully crafted.</p>
+          <p className="short-desc">Designer by heart. Currently a Frontend Engineer Intern <a href="https://www.blibli.com/" target="_blank">@Blibli.</a><br/>Also doing side projects for a living.</p>
           <a href={ this.state.medium.url } target="_blank">
             <button className="medium">
               <div className="row">
@@ -60,6 +61,7 @@ class HomePage extends Component {
             {/* <h1>PORTFOLIO</h1> */}
           </div>
         </div>
+        <Portfolio />
       </div>
     );
   }

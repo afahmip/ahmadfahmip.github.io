@@ -35,6 +35,10 @@ $medium-border: 1px;
       font-size: 2vh;
       margin-top: 3vh;
       margin-bottom: 5vh;
+      a {
+        color: $cyan;
+        font-weight: bold;
+      }
     }
     .medium {
       letter-spacing: 0.5vh;
