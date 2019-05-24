@@ -84,7 +84,7 @@ $medium-border: 1px;
         @media all and (max-width: 480px) {
           padding: 1rem;
           p:last-child {
-            max-width: 70vw;
+            max-width: 75vw;
           }
           p:nth-child(2) {
             display: none;
@@ -106,7 +106,7 @@ $medium-border: 1px;
 
       /* Mobile Phone & iPad */
       @media all and (orientation:portrait) {
-        width: 85vw;
+        width: 90vw;
       }
 
       /* Mobile landscape */
@@ -114,5 +114,17 @@ $medium-border: 1px;
         width: 40vw;
       }
     }
+  }
+}
+
+#portfolio {
+  /* Portrait Devices & iPad */
+  @media all and (orientation:portrait) {
+    padding: 0 5vw;
+  }
+
+  /* Mobile Phone */
+  @media all and (max-width: 480px) {
+    padding: 0;
   }
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import Portfolio from './Portfolio'
 import './index.scss'
 
@@ -45,8 +45,8 @@ class HomePage extends Component {
           <h1>self-claimed <i>hackathlete</i></h1>
           <h1 className="row">based in Bandung, ID_</h1>
           {/* <div className="tail" /> */}
-          <p className="short-desc">Designer by heart. Currently a Frontend Engineer Intern <a href="https://www.blibli.com/" target="_blank">@Blibli.</a><br/>Also doing side projects for a living.</p>
-          <a href={ this.state.medium.url } target="_blank">
+          <p className="short-desc">Designer by heart. Currently a Frontend Engineer Intern <a href="https://www.blibli.com/" target="_blank" rel="noopener noreferrer">@Blibli.</a><br/>Also doing side projects for a living.</p>
+          <a href={ this.state.medium.url } target="_blank" rel="noopener noreferrer">
             <button className="medium">
               <div className="row">
                 <i className="fab fa-medium"></i>
